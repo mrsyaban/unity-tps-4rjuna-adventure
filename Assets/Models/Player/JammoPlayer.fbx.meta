@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: eyes.001
-    second: {fileID: 2100000, guid: d5c0dc78f40c06c4e9356a3218da955b, type: 2}
+    second: {fileID: 2100000, guid: 08702ca35b3da324289967c729d12897, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mixbox_mat.002
-    second: {fileID: 2100000, guid: 60c2f0e0aaa8f8d4e9d23d7e3768653b, type: 2}
+    second: {fileID: 2100000, guid: 5b80c166098b5d646ae22d6aaddde9d2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
