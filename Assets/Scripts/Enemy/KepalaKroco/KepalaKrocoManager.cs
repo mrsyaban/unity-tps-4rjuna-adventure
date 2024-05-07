@@ -14,6 +14,8 @@ public class KepalaKrocoManager : MonoBehaviour
     public KepalaIdleState idle = new KepalaIdleState();
     public KepalaWalkState walk = new KepalaWalkState();
     public KepalaFireState fire = new KepalaFireState();
+    [SerializeField] public KepalaWeaponManager weapon;
+    [SerializeField] public float distanceAttack; 
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class KepalaKrocoManager : MonoBehaviour
     void Update()
     {
         Debug.Log("Distance : " + Vector3.Distance(enemy.position, player.position));
-        if (Vector3.Distance(enemy.position, player.position) > 5) enemyNav.destination = player.position;
+        if (Vector3.Distance(enemy.position, player.position) > distanceAttack) enemyNav.destination = player.position;
         else { 
             enemyNav.destination = enemy.position;
             Quaternion lookRotation = Quaternion.LookRotation(player.position - enemy.position);
