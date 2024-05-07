@@ -44,6 +44,11 @@ public class AimStateManager : MonoBehaviour
         // xAxis.Update(Time.deltaTime);
         // yAxis.Update(Time.deltaTime);   
         xAxis += Input.GetAxisRaw("Mouse X") * mouseSense;
+        // if (Input.GetJoystickNames().Length < 0) {
+        //     yAxis -= Input.GetAxisRaw("Mouse Y") * mouseSense;
+        // } else {
+        //     yAxis += Input.GetAxisRaw("Mouse Y") * mouseSense;
+        // }
         yAxis -= Input.GetAxisRaw("Mouse Y") * mouseSense;
         yAxis = Mathf.Clamp(yAxis, -80, 80);
 
