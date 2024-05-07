@@ -780,6 +780,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemyNav: {fileID: 0}
+  enemy: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0
