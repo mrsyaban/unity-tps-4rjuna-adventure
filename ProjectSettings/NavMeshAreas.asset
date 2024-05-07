@@ -69,7 +69,11 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
+<<<<<<< HEAD
   m_LastAgentTypeID: 658490984
+=======
+  m_LastAgentTypeID: -887442657
+>>>>>>> 695ad3ae20413ff342232392c7f5ab061b126f72
   m_Settings:
   - serializedVersion: 3
     agentTypeID: 0
@@ -89,6 +93,7 @@ NavMeshProjectSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     agentTypeID: -334000983
     agentRadius: 0.4
@@ -167,3 +172,7 @@ NavMeshProjectSettings:
   - JendralNav
   - KrocoNav
   - PenyembuhNav
+=======
+  m_SettingNames:
+  - Humanoid
+>>>>>>> 695ad3ae20413ff342232392c7f5ab061b126f72
