@@ -25,7 +25,7 @@ public class ShotGunManager : MonoBehaviour
     {
         _aim = GetComponentInParent<AimStateManager>();
         _fireRateTimer = fireRate;
-        animator = FindParentObjectByName(transform, "PlayerCapsule").GetComponent<Animator>();
+        animator = FindParentObjectByName(transform, "PlayerObject").GetComponent<Animator>();
         _rightHand = GameObject.Find("JammoPlayer/Rig 1/RightHandAim");
         _twoBoneIKRight = _rightHand.GetComponent<UnityEngine.Animations.Rigging.MultiAimConstraint>();
     }

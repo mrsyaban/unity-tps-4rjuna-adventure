@@ -17,7 +17,7 @@ public class WeaponManager : MonoBehaviour
         _rightHand = GameObject.Find("JammoPlayer/Rig 1/RightHandAim");
         _twoBoneIKLeft = _leftHand.GetComponent<UnityEngine.Animations.Rigging.TwoBoneIKConstraint>();
         _twoBoneIKRight = _rightHand.GetComponent<UnityEngine.Animations.Rigging.MultiAimConstraint>();
-        animator = FindParentObjectByName(transform, "PlayerCapsule").GetComponent<Animator>();
+        animator = FindParentObjectByName(transform, "PlayerObject").GetComponent<Animator>();
         SelectWeapon();
     }
 

@@ -13,7 +13,7 @@ public class SwordManager : MonoBehaviour
     
     void Start()
     {
-        animator = FindParentObjectByName(transform, "PlayerCapsule").GetComponent<Animator>();
+        animator = FindParentObjectByName(transform, "PlayerObject").GetComponent<Animator>();
         
     }
 
