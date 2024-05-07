@@ -69,11 +69,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-<<<<<<< HEAD
-  m_LastAgentTypeID: 287145453
-=======
   m_LastAgentTypeID: 658490984
->>>>>>> 2ab74a09986da8532dfee75806667293b90ec3ab
   m_Settings:
   - serializedVersion: 3
     agentTypeID: 0
@@ -131,13 +127,8 @@ NavMeshProjectSettings:
       m_Flags: 0
   - serializedVersion: 3
     agentTypeID: 287145453
-<<<<<<< HEAD
     agentRadius: 0.5
     agentHeight: 1.9
-=======
-    agentRadius: 1
-    agentHeight: 2.2
->>>>>>> 2ab74a09986da8532dfee75806667293b90ec3ab
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
@@ -152,14 +143,12 @@ NavMeshProjectSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-<<<<<<< HEAD
-=======
   - serializedVersion: 3
     agentTypeID: 658490984
     agentRadius: 0.5
-    agentHeight: 0.5
+    agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.5
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -172,14 +161,9 @@ NavMeshProjectSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
->>>>>>> 2ab74a09986da8532dfee75806667293b90ec3ab
   m_SettingNames:
   - Humanoid
   - KepalaKrocoNav
   - JendralNav
-<<<<<<< HEAD
   - KrocoNav
-=======
-  - RajaNav
-  - IncreasePetNav
->>>>>>> 2ab74a09986da8532dfee75806667293b90ec3ab
+  - PenyembuhNav
