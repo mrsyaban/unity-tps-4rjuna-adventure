@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &48752295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1953181276671417102, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+  m_PrefabInstance: {fileID: 2067678548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e428a5c0cc148594782749936b164560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &359320755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1183079863328568, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
@@ -586,6 +597,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1953181276671417102, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1953181276671417102, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1366738585}
+    - target: {fileID: -1953181276671417102, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+      propertyPath: bulletVelocity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1248815240492774, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
       propertyPath: m_Name
       value: KepalaKroco
@@ -634,6 +657,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1366738585}
+    - target: {fileID: 6751123234650003217, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 48752295}
+    - target: {fileID: 6751123234650003217, guid: efafb2556b9e2ca47851e3d178a89f7e, type: 3}
+      propertyPath: distanceAttack
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

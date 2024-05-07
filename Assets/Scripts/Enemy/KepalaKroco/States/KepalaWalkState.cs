@@ -10,7 +10,7 @@ public class KepalaWalkState : KepalaKrocoBaseState
 
     public override void UpdateState(KepalaKrocoManager manager)
     {
-        if (manager.enemyNav.velocity.magnitude <= 0 && Vector3.Distance(manager.enemy.position, manager.player.position) < 5) manager.SwitchState(manager.idle);
+        if (manager.enemyNav.velocity.magnitude <= 0 && Vector3.Distance(manager.enemy.position, manager.player.position) < manager.distanceAttack) manager.SwitchState(manager.idle);
         // Debug.Log("Angular Speed : " +  manager.enemy.velocity.magnitude);
     }
 }
