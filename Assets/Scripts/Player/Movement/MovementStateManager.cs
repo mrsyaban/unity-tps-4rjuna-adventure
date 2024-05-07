@@ -65,7 +65,7 @@ public class MovementStateManager : MonoBehaviour
         return false;
     }
 
-    void Gravity()
+    void  Gravity()
     {
         if (!IsGrounded()) velocity.y += gravity * Time.deltaTime;
         else if (velocity.y < 0) velocity.y = -2;
