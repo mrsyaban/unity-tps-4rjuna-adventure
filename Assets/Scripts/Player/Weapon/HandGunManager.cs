@@ -13,6 +13,7 @@ public class HandGunManager : MonoBehaviour
     [SerializeField] private float bulletVelocity;
     [SerializeField] private int bulletPerShot;
     private AimStateManager _aim;
+    public float damage = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,10 @@ public class HandGunManager : MonoBehaviour
         for (int i = 0; i < bulletPerShot; i++)
         {
             GameObject currentBullet = Instantiate(bullet, barrelPos.position, barrelPos.rotation);
+
+            // HandBulletManager bulletManager = currentBullet.GetComponent<HandBulletManager>();
+            // bulletManager.weapon = this;
+
             Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
             rb.AddForce(barrelPos.forward * bulletVelocity, ForceMode.Impulse);
         }
