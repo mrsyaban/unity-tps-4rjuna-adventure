@@ -144,6 +144,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3484598366726547735, guid: eb874a12bf8f94f4f98ec2f121cf8764, type: 3}
+      propertyPath: m_AgentTypeID
+      value: 287145453
+      objectReference: {fileID: 0}
+    - target: {fileID: -3484598366726547735, guid: eb874a12bf8f94f4f98ec2f121cf8764, type: 3}
       propertyPath: m_StoppingDistance
       value: 5
       objectReference: {fileID: 0}
@@ -789,7 +793,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c75362a5f491a524fb2137e64cddf8e3, type: 2}
   m_BuildHeightMesh: 0
