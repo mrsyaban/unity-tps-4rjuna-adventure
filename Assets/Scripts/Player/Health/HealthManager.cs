@@ -23,6 +23,7 @@ public class HealthManager : MonoBehaviour {
     {
         Animator animator = GetComponent<Animator>();
 
+        animator.SetLayerWeight(1, 0);
         animator.SetTrigger("Dead");
 
         Debug.Log("Death");
