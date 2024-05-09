@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerEyes
   - PlayerBullet
   layers:
   - Default
@@ -13,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Player
+  - DialogueBox
+  - 
   - 
   - 
   - 
@@ -42,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DialogueBox
+    uniqueID: 3278732985
     locked: 0
