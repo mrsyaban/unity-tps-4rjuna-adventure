@@ -4,17 +4,17 @@ public class KrocoSword : MonoBehaviour
 {
     private float damage = 5;
 
-    private void Update() 
-    {
-        Debug.Log("Kroco");
-    }
+    // private void Update() 
+    // {
+    //     Debug.Log("Kroco");
+    // }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnTriggerEnter(Collider other) 
     {
         string colliderName = other.gameObject.name;
         Debug.Log("Collided with: " + colliderName);
-        if (!other.gameObject.CompareTag("PlayerBullet"))
-        {
+        // if (!other.gameObject.CompareTag("PlayerBullet"))
+        // {
             
             // if (collision.gameObject.GetComponentInParent<HealthManager>())
             // {
@@ -24,6 +24,6 @@ public class KrocoSword : MonoBehaviour
             //     Debug.Log("Player : " + playerHealth.health);
             // }
             // Destroy(gameObject); // Destroy the GameObject this script is attached to
-        }
+        // }
     }     
 }

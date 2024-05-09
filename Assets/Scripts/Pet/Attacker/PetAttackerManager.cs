@@ -28,6 +28,8 @@ public class PetAttackerManager : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
 
     // Update is called once per frame
