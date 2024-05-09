@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     [HideInInspector] public ParticleSystem hitParticle;
     [SerializeField] public HealthBar healthBar;
 
+    [HideInInspector] public bool isDead = false;
     void Awake()
     {
         hitParticle = GetComponentInChildren<ParticleSystem>();
@@ -31,12 +32,16 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        if(isDead) return;
+        this.isDead = true;
 
         Animator animator = GetComponent<Animator>();
 
         GetComponent<NavMeshAgent>().enabled = false;
 
         animator.SetTrigger("Dead");
+
+        GetComponent<OrbManager>().DropRandomOrb();
 
         Destroy(gameObject, 2.5f);
     } 

@@ -6,7 +6,7 @@ public class MovementStateManager : MonoBehaviour
 {
     public float currentMoveSpeed;
     public float walkSpeed = 3, walkBackSpeed = 2;
-
+    [HideInInspector] public float speedUpTime = 0;
 
     [HideInInspector] public Vector3 dir;
     public float hzInput, vtInput;
@@ -40,6 +40,17 @@ public class MovementStateManager : MonoBehaviour
 
         animator.SetFloat("hzInput", hzInput);
         animator.SetFloat("vtInput", vtInput);
+
+        if(this.speedUpTime == 0)
+        {
+            this.currentMoveSpeed = 3;
+            this.walkSpeed = 3;
+            this.walkBackSpeed = 2;
+        }
+        else
+        {
+            this.speedUpTime -= 1;
+        }
 
         currentState.UpdateState(this);
     }

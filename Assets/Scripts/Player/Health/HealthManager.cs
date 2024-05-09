@@ -5,7 +5,7 @@ public class HealthManager : MonoBehaviour {
     [HideInInspector] public float health;
     [SerializeField] public PlayerHealthBar playerHealthBar;
 
-    private void Awake()
+    public void Awake()
     {
         health = maxHealth;
         playerHealthBar.UpdateHealthBar(maxHealth, health);
