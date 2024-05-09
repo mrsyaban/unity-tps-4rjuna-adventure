@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4494806104067236
 Transform:
   m_ObjectHideFlags: 0
@@ -430,7 +430,8 @@ Transform:
   m_LocalPosition: {x: -1.2225571, y: -0.06875052, z: -0.31844604}
   m_LocalScale: {x: 100.000046, y: 100, z: 100.000015}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6803903616794822129}
   m_Father: {fileID: 4697918775314360}
   m_LocalEulerAnglesHint: {x: -180, y: 89.99999, z: -90}
 --- !u!33 &33700756203564172
@@ -677,6 +678,7 @@ GameObject:
   - component: {fileID: 136306802490482818}
   - component: {fileID: -5838373383126651242}
   - component: {fileID: 6751123234650003217}
+  - component: {fileID: -1953181276671417102}
   m_Layer: 0
   m_Name: KepalaKroco
   m_TagString: Untagged
@@ -780,6 +782,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemyNav: {fileID: 0}
+  enemy: {fileID: 0}
+  animator: {fileID: 0}
+<<<<<<< HEAD
+=======
+  weapon: {fileID: -1953181276671417102}
+--- !u!114 &-1953181276671417102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e428a5c0cc148594782749936b164560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 3
+  bullet: {fileID: 780176955485838907, guid: 70a008ec949cda443bbed0f7ebc96122, type: 3}
+  bulletSpawner: {fileID: 6803903616794822129}
+  bulletVelocity: 100
+  bulletPerShot: 2
+  playerPos: {fileID: 0}
+>>>>>>> 2ab74a09986da8532dfee75806667293b90ec3ab
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4891505152052632
 Transform:
   m_ObjectHideFlags: 0
@@ -1922,6 +1949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4697918775314360}
+  - component: {fileID: 5009019764318160597}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -1947,6 +1975,24 @@ Transform:
   - {fileID: 4126116459025950}
   m_Father: {fileID: 4766417282772594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5009019764318160597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587177246678718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e428a5c0cc148594782749936b164560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0
+  bullet: {fileID: 0}
+  bulletSpawner: {fileID: 0}
+  bulletVelocity: 0
+  bulletPerShot: 0
+  playerPos: {fileID: 0}
 --- !u!1 &1609667907371112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,4 +2695,35 @@ Transform:
   m_Children:
   - {fileID: 4001952010290576}
   m_Father: {fileID: 4320116383092368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &93258661874561295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6803903616794822129}
+  m_Layer: 0
+  m_Name: bulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6803903616794822129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93258661874561295}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4494806104067236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
