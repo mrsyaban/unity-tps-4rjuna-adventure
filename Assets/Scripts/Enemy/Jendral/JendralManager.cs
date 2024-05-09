@@ -5,19 +5,20 @@ using UnityEngine.AI;
 
 public class JendralManager : MonoBehaviour
 {
-    public Transform player;
-    public NavMeshAgent enemyNav;
-    public Transform enemy;
+    [HideInInspector] public Transform player;
+    [HideInInspector] public NavMeshAgent enemyNav;
+    [HideInInspector] public Transform enemy;
     [HideInInspector] public Animator animator;
-
     JendralBaseState currentState;
     public JendralIdleState idle = new JendralIdleState();
     public JendralWalkState walk = new JendralWalkState();
     public JendralAttackState attack = new JendralAttackState();
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyNav = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Transform>();
         animator = GetComponent<Animator>();  
@@ -38,18 +39,6 @@ public class JendralManager : MonoBehaviour
             // SwitchState(fire);
         }
         currentState.UpdateState(this);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Called Trigger GetHit");
-        this.animator.SetTrigger("GetHit");
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Called ResetTrigger GetHit");
-        this.animator.ResetTrigger("GetHit");
     }
 
     public void SwitchState(JendralBaseState state) {
