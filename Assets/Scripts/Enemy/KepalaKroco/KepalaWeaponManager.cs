@@ -38,9 +38,9 @@ public class KepalaWeaponManager: MonoBehaviour
     {
         fireRateTimer = 0; 
         bulletSpawner.LookAt(playerPos);
-        SpawnBullet( new Vector3(-0.1f, 0f, 0f));
-        SpawnBullet( new Vector3(0f, -0.1f, 0f));
-        SpawnBullet( new Vector3(0f, 0f, -0.1f));
+        SpawnBullet( new Vector3(-0.1f, 0.1f, 0f));
+        SpawnBullet( new Vector3(0f, 0.1f, 0f));
+        SpawnBullet( new Vector3(0f, 0.1f, -0.1f));
         
     }
 
