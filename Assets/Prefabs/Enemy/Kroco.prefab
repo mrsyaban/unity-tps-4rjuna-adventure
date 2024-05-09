@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: -2834503973924621075}
   - component: {fileID: 4382900912768732664}
   - component: {fileID: 5021488256688281771}
+  - component: {fileID: 3833265962959981881}
   m_Layer: 0
   m_Name: Kroco
   m_TagString: Untagged
@@ -787,6 +788,23 @@ MonoBehaviour:
   health: 0
   hitParticle: {fileID: 0}
   healthBar: {fileID: 7546898642717492903}
+--- !u!114 &3833265962959981881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136820629370392942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9aeeeea7b68655488dd8f4786830585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbPrefabs:
+  - {fileID: 1975959190090480, guid: ac7740b3a60987644834a953eb55078e, type: 3}
+  - {fileID: 1518366863219760, guid: c530f62b93650b74ba4b1342d10a0914, type: 3}
+  - {fileID: 1223526616464650, guid: 0169b09a2f9c34745ad66bfcde0e57d2, type: 3}
+  deathDelay: 2
 --- !u!1 &3190320679450232660
 GameObject:
   m_ObjectHideFlags: 0
