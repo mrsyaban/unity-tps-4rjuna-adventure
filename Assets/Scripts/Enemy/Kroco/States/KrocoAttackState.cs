@@ -5,7 +5,7 @@ public class KrocoAttackState : KrocoBaseState
 {
     public override void EnterState(KrocoMovementManager manager)
     {
-        Debug.Log("Enter Attack");
+        // Debug.Log("Enter Attack");
         manager.animator.SetBool("IsAttack", true);
     }
 
@@ -13,14 +13,14 @@ public class KrocoAttackState : KrocoBaseState
     {
         if (manager.enemyNav.velocity.magnitude > 0)
         {
-            Debug.Log("EnemyNav Kroco velocity magnitude: " + manager.enemyNav.velocity.magnitude);
-            Debug.Log("Musuh gerak, masuk walk");
+            // Debug.Log("EnemyNav Kroco velocity magnitude: " + manager.enemyNav.velocity.magnitude);
+            // Debug.Log("Musuh gerak, masuk walk");
             ExitState(manager, manager.walk);
         }
         else if (Vector3.Distance(manager.enemy.position, manager.player.position) > manager.distanceAttack)
         {
-            Debug.Log("Kroco - player Vector Distance: " + Vector3.Distance(manager.enemy.position, manager.player.position));
-            Debug.Log("Musuh gerak, masuk walk");
+            // Debug.Log("Kroco - player Vector Distance: " + Vector3.Distance(manager.enemy.position, manager.player.position));
+            // Debug.Log("Musuh gerak, masuk walk");
             ExitState(manager, manager.walk);
         }
 

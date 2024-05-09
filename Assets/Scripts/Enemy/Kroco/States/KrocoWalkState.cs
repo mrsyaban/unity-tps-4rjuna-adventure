@@ -12,7 +12,7 @@ public class KrocoWalkState : KrocoBaseState
     {
         if (manager.enemyNav.velocity.magnitude <= 0 && Vector3.Distance(manager.enemy.position, manager.player.position) < manager.distanceAttack)
         {
-            Debug.Log("From Walk - Attack :Distance between enemy and player: " + Vector3.Distance(manager.enemy.position, manager.player.position));
+            // Debug.Log("From Walk - Attack :Distance between enemy and player: " + Vector3.Distance(manager.enemy.position, manager.player.position));
             ExitState(manager, manager.attack);
         }
         // Debug.Log("Angular Speed : " +  manager.enemy.velocity.magnitude);
