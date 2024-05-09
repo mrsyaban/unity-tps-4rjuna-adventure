@@ -13,18 +13,25 @@ public class KepalaWeaponManager: MonoBehaviour
     [SerializeField] Transform bulletSpawner;
     [SerializeField] float bulletVelocity;
     [SerializeField] int bulletPerShot;
-    [SerializeField] Transform playerPos;
+    [HideInInspector] Transform playerPos;
+    [SerializeField] EnemyHealth enemyHealth;
 
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         fireRateTimer = fireRate;
     }
 
     public bool IsCanFire() 
     {
+        if (enemyHealth.health <= 0) return false; 
         fireRateTimer += Time.deltaTime;
-        if (fireRateTimer < fireRate) return false;
-        else return true;
+        if (fireRateTimer < fireRate) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     public void Fire()

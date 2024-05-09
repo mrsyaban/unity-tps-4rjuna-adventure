@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class KrocoManager : MonoBehaviour
+public class KrocoMovementManager : MonoBehaviour
 {
-    public Transform player;
-    public NavMeshAgent enemyNav;
-    public Transform enemy;
+    [HideInInspector] public Transform player;
+    [HideInInspector] public NavMeshAgent enemyNav;
+    [HideInInspector] public Transform enemy;
     [HideInInspector] public Animator animator;
 
     KrocoBaseState currentState;
     public KrocoIdleState idle = new();
     public KrocoWalkState walk = new();
     public KrocoAttackState attack = new();
+    [SerializeField] public float distanceAttack; 
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyNav = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -28,7 +30,7 @@ public class KrocoManager : MonoBehaviour
     void Update()
     {
         // Debug.Log("Distance : " + Vector3.Distance(enemy.position, player.position));
-        if (Vector3.Distance(enemy.position, player.position) >= 2) enemyNav.destination = player.position;
+        if (Vector3.Distance(enemy.position, player.position) >= distanceAttack) enemyNav.destination = player.position;
         else
         {
             enemyNav.destination = enemy.position;
@@ -41,17 +43,17 @@ public class KrocoManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Kroco Called Trigger GetHit");
-        this.animator.SetTrigger("GetHit");
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     Debug.Log("Kroco Called Trigger GetHit");
+    //     this.animator.SetTrigger("GetHit");
+    // }
 
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Kroco Called ResetTrigger GetHit");
-        this.animator.ResetTrigger("GetHit");
-    }
+    // void OnTriggerExit(Collider other)
+    // {
+    //     Debug.Log("Kroco Called ResetTrigger GetHit");
+    //     this.animator.ResetTrigger("GetHit");
+    // }
 
     public void SwitchState(KrocoBaseState state)
     {

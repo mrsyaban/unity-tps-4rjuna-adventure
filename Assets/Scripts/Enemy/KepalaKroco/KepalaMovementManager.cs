@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class KepalaKrocoManager : MonoBehaviour
+public class KepalaMovementManager : MonoBehaviour
 {
-    public Transform player;
-    public NavMeshAgent enemyNav;
-    public Transform enemy;
+    [HideInInspector] public Transform player;
+    [HideInInspector] public NavMeshAgent enemyNav;
+    [HideInInspector] public Transform enemy;
     [HideInInspector] public Animator animator;
 
     KepalaKrocoBaseState currentState;
@@ -19,7 +19,8 @@ public class KepalaKrocoManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyNav = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Transform>();
         animator = GetComponent<Animator>();  
@@ -29,7 +30,6 @@ public class KepalaKrocoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Distance : " + Vector3.Distance(enemy.position, player.position));
         if (Vector3.Distance(enemy.position, player.position) > distanceAttack) enemyNav.destination = player.position;
         else { 
             enemyNav.destination = enemy.position;
