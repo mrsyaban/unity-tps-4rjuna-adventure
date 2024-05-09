@@ -41,7 +41,10 @@ public class EnemyHealth : MonoBehaviour
 
         animator.SetTrigger("Dead");
 
-        GetComponent<OrbManager>().DropRandomOrb();
+        if (gameObject.name != "Raja")
+            GetComponent<OrbManager>().DropRandomOrb();
+
+        Debug.Log("Death");
 
         Destroy(gameObject, 2.5f);
     } 

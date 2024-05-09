@@ -21,15 +21,6 @@ public class PetIncreaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Vector3.Distance(enemy.position, master.position) > distance) petNav.destination = master.position;
-        // else { 
-        //     petNav.destination = enemy.position;
-        //     Quaternion lookRotation = Quaternion.LookRotation(master.position - enemy.position);
-        
-        //     // Mengatur rotasi enemy
-        //     enemy.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
-        //     // SwitchState(fire);
-        // }
         petNav.destination = master.position;
     }
 }

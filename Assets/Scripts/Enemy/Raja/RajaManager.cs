@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class RajaManager : MonoBehaviour
 {
-    public Transform player;
-    public NavMeshAgent enemyNav;
-    public Transform enemy;
+    [HideInInspector] public Transform player;
+    [HideInInspector] public NavMeshAgent enemyNav;
+    [HideInInspector] public Transform enemy;
     [HideInInspector] public Animator animator;
 
     RajaBaseState currentState;
-    public int _rangeAttackCount;  
-    public int _meleAttackCount;  
+    [HideInInspector] public int _rangeAttackCount;  
+    [HideInInspector] public int _meleAttackCount;  
     public RajaIdleState idle = new RajaIdleState();
     public RajaWalkState walk = new RajaWalkState();
     public RajaFireState fire = new RajaFireState();
@@ -23,6 +23,7 @@ public class RajaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyNav = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -34,7 +35,7 @@ public class RajaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Velo : " + enemyNav.velocity.magnitude);
+        // Debug.Log("Velo : " + enemyNav.velocity.magnitude);
         if (Vector3.Distance(enemy.position, player.position) > distanceAttack) enemyNav.destination = player.position;
         else { 
             enemyNav.destination = enemy.position;

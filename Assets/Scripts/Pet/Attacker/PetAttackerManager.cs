@@ -61,6 +61,8 @@ public class PetAttackerManager : MonoBehaviour
         {
             animator.SetBool("isStop", false);
         }
+
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
     
     private void Rotate(Vector3 targetEulerAngles)

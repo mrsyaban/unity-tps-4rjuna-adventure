@@ -13,15 +13,18 @@ public class RajaWeaponManager: MonoBehaviour
     [SerializeField] Transform bulletSpawner;
     [SerializeField] float bulletVelocity;
     [SerializeField] int bulletPerShot;
-    [SerializeField] Transform playerPos;
+    [HideInInspector] Transform playerPos;
+    [SerializeField] EnemyHealth enemyHealth;
 
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         fireRateTimer = fireRate;
     }
 
     public bool IsCanFire() 
     {
+        if (enemyHealth.health <= 0) return false; 
         fireRateTimer += Time.deltaTime;
         if (fireRateTimer < fireRate) return false;
         else return true;
@@ -34,6 +37,10 @@ public class RajaWeaponManager: MonoBehaviour
         SpawnBullet( new Vector3(-0.1f, 0f, 0f));
         SpawnBullet( new Vector3(0f, -0.1f, 0f));
         SpawnBullet( new Vector3(0f, 0f, -0.1f));
+        SpawnBullet( new Vector3(0f, 0f, 0f));
+        SpawnBullet( new Vector3(0.1f, 0f, 0f));
+        SpawnBullet( new Vector3(0f, 0.1f, 0f));
+        SpawnBullet( new Vector3(0f, 0f, 0.1f));
         
     }
 

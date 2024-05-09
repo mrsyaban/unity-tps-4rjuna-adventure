@@ -7,6 +7,8 @@ TagManager:
   - PlayerBullet
   - FxTemporaire
   - EnemyManager
+  - PlayerPet
+  - Enemy
   layers:
   - Default
   - TransparentFX
