@@ -23,8 +23,8 @@ public class KepalaBulletManager : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("PlayerBullet"))
         {
-            // string colliderName = collision.gameObject.name;
-            // Debug.Log("Collided with: " + colliderName);
+            string colliderName = collision.gameObject.name;
+            Debug.Log("Collided with: " + colliderName);
             
             if (collision.gameObject.GetComponentInParent<HealthManager>())
             {
