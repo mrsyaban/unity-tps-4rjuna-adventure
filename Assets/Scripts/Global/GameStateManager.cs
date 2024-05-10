@@ -32,8 +32,8 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public int krocoKill = 0;
     [HideInInspector]
-    public bool isLoad = false;
-    [HideInInspector]
+    public bool loadSpeed = false;
+    public bool loadHealth = false;
 
     private void Awake()
     {
@@ -45,12 +45,6 @@ public class GameStateManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void FindAllDataPersistenceObjects() 
-    {
-        IEnumerable<GameStateManager> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
-            .OfType<GameStateManager>();
     }
 
     public void AddCoin(int val)

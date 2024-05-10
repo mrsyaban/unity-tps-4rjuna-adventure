@@ -9,9 +9,10 @@ public class HealthManager : MonoBehaviour {
     {
         health = maxHealth;
         playerHealthBar.UpdateHealthBar(maxHealth, health);
-        if(GameStateManager.Instance.isLoad)
+        if(GameStateManager.Instance.loadHealth && GameStateManager.Instance.playerHealth != 0)
         {
             health = GameStateManager.Instance.playerHealth;
+            GameStateManager.Instance.loadHealth = false;
         } else { GameStateManager.Instance.playerHealth = health; }
     }
 

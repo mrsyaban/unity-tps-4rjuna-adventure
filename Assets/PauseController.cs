@@ -13,7 +13,7 @@ public class PauseController : MonoBehaviour
     }
     public void Save()
     {
-        SaveSystem.SaveGameState(GameStateManager.Instance);
+        SaveSystem.SaveGameState();
     }
 
     void Update()

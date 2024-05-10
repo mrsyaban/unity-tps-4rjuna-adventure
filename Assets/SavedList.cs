@@ -45,6 +45,6 @@ public class SavedList : MonoBehaviour
             Debug.LogError("No TextMeshProUGUI component found in the button prefab's children.");
         }
 
-        newButton.onClick.AddListener(() => SaveSystem.LoadGameState(GameStateManager.Instance, fileName));
+        newButton.onClick.AddListener(() => SaveSystem.LoadGameState(fileName));
     }
 }

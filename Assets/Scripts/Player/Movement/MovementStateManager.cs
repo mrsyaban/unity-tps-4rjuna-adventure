@@ -33,13 +33,14 @@ public class MovementStateManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        if(GameStateManager.Instance.isLoad)
+        if(GameStateManager.Instance.loadSpeed)
         {
             if(GameStateManager.Instance.hasSpeedOrb)
             {
                 this.speedUpTime = GameStateManager.Instance.speedOrbTime;
             }
             transform.position = GameStateManager.Instance.playerPosition;
+            GameStateManager.Instance.loadSpeed = false;
         }
         previousPosition = transform.position;
         SwitchState(idle);

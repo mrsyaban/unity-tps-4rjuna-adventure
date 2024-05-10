@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -890,10 +890,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8997919122600711995, guid: f261153ff91a0b448945dffee424d778, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1967351185}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f261153ff91a0b448945dffee424d778, type: 3}
 --- !u!4 &267168510 stripped
 Transform:
@@ -1389,11 +1386,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f9905bf996cdc74cb9766b8781e580e, type: 3}
---- !u!1 &459122589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8997919122600711995, guid: f261153ff91a0b448945dffee424d778, type: 3}
-  m_PrefabInstance: {fileID: 260192107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &462930821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010376938618, guid: 8f9905bf996cdc74cb9766b8781e580e, type: 3}
@@ -4060,33 +4052,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2278620806903188652, guid: f261153ff91a0b448945dffee424d778, type: 3}
   m_PrefabInstance: {fileID: 260192107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1967351185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459122589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17eaa32a09a6b20469cc5d930de7c1d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coin: 0
-  playerHealth: 0
-  playerPosition: {x: 0, y: 0, z: 0}
-  levelName: 
-  hasDamageOrb: 0
-  countDamageOrb: 0
-  hasSpeedOrb: 0
-  speedOrbTime: 0
-  lifetime: 0
-  distance: 0
-  onHitTarget: 0
-  jendralKill: 0
-  kepalaKrocoKill: 0
-  krocoKill: 0
-  isLoad: 0
 --- !u!4 &1970150665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010376938618, guid: 8f9905bf996cdc74cb9766b8781e580e, type: 3}
