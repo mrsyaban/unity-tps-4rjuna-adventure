@@ -9,12 +9,18 @@ public class HealthManager : MonoBehaviour {
     {
         health = maxHealth;
         playerHealthBar.UpdateHealthBar(maxHealth, health);
+        if(GameStateManager.Instance.loadHealth && GameStateManager.Instance.playerHealth != 0)
+        {
+            health = GameStateManager.Instance.playerHealth;
+            GameStateManager.Instance.loadHealth = false;
+        } else { GameStateManager.Instance.playerHealth = health; }
     }
 
     public void TakeDamage(float damage)
     {
         health -= damage;
         playerHealthBar.UpdateHealthBar(maxHealth, health);
+        GameStateManager.Instance.UpdatePlayerHealth(health);
 
         if (health <= 0) Death();
     }
