@@ -12,7 +12,7 @@ public class Dialogue : MonoBehaviour
     public Sprite[] lineImages;
     public Image backgroundImage; // Properti untuk latar belakang
     public Sprite[] backgroundImages; // Array untuk menyimpan sprite latar belakang
-
+    [SerializeField] public string nextScene;
     private int index;
 
     // Start is called before the first frame update
@@ -68,6 +68,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            NextScene.Next(nextScene);
             gameObject.SetActive(false);
         }
     }

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -10,6 +12,16 @@ public class GameMenuManager : MonoBehaviour
     public GameObject statisticsCanvas;
     public GameObject loadCanvas;
     public GameObject settingsCanvas;
+
+    //Settings UI Field
+    public TMP_InputField playerNameInput;
+    public Slider volumeSlider;
+    public TMP_Text volumeValueInfo;
+
+    private void Awake()
+    {
+        GameStateManager.Instance.LoadGameState();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -23,7 +35,7 @@ public class GameMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level01");
+        NextScene.Next("Scenes/Cutscene01");
     }
 
     public void QuitGame()
@@ -73,6 +85,9 @@ public class GameMenuManager : MonoBehaviour
         mainMenuCanvas.SetActive(false);
         statisticsCanvas.SetActive(false);
         loadCanvas.SetActive(false);
+        playerNameInput.text = GameStateManager.Instance.playerName;
+        volumeSlider.value = GameStateManager.Instance.gameVolume;
+        volumeValueInfo.text = ((int)GameStateManager.Instance.gameVolume).ToString() + "%";
     }
 
     public void CloseSettings()
@@ -81,11 +96,19 @@ public class GameMenuManager : MonoBehaviour
         mainMenuCanvas.SetActive(true);
         statisticsCanvas.SetActive(false);
         loadCanvas.SetActive(false);
+        GameStateManager.Instance.playerName = playerNameInput.text;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnSliderChanged()
+    {
+        GameStateManager.Instance.gameVolume = volumeSlider.value;
+        AudioListener.volume = volumeSlider.value / 100;
+        volumeValueInfo.text = ((int)volumeSlider.value).ToString() + "%";
     }
 }

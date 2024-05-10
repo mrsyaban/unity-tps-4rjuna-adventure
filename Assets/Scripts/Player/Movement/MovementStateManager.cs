@@ -23,12 +23,26 @@ public class MovementStateManager : MonoBehaviour
     public RunState run = new RunState();
 
     [HideInInspector] public Animator animator;
+    
+    private Vector3 previousPosition;
+    private float lifetimeTimer;
+    private float distanceTraveled;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        if(GameStateManager.Instance.loadSpeed)
+        {
+            if(GameStateManager.Instance.hasSpeedOrb)
+            {
+                this.speedUpTime = GameStateManager.Instance.speedOrbTime;
+            }
+            transform.position = GameStateManager.Instance.playerPosition;
+            GameStateManager.Instance.loadSpeed = false;
+        }
+        previousPosition = transform.position;
         SwitchState(idle);
     }
 
@@ -51,6 +65,15 @@ public class MovementStateManager : MonoBehaviour
         {
             this.speedUpTime -= 1;
         }
+        // distanceTraveled = Vector3.Distance(transform.position, previousPosition);
+
+        previousPosition = transform.position;
+
+        // GameStateManager.Instance.UpdateDistance(distanceTraveled);
+        GameStateManager.Instance.UpdatePlayerPosition(transform.position);
+        
+        lifetimeTimer += Time.deltaTime;
+        GameStateManager.Instance.UpdateLifetime(lifetimeTimer);
 
         currentState.UpdateState(this);
     }
@@ -83,9 +106,9 @@ public class MovementStateManager : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-    private void OnDrawGizmos() 
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(spherePos, controller.radius - 0.05f);
-    }
+    // private void OnDrawGizmos() 
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(spherePos, controller.radius - 0.05f);
+    // }
 }
