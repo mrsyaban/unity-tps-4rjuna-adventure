@@ -35,7 +35,7 @@ public class GameMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level01");
+        NextScene.Next("Scenes/Cutscene01");
     }
 
     public void QuitGame()
