@@ -14,6 +14,7 @@ public class SpeedOrbController : MonoBehaviour
             playerMovement.currentMoveSpeed += 1.2f * playerMovement.currentMoveSpeed;
             playerMovement.walkSpeed += 1.2f * playerMovement.walkSpeed;
             playerMovement.walkBackSpeed += 1.2f * playerMovement.walkBackSpeed;
+            GameStateManager.Instance.UpdateSpeedOrbStatus(true, 15000);
             Consume(); // Call the Consume function when colliding with the player
         }
     }
