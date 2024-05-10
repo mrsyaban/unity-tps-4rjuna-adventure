@@ -9,18 +9,25 @@ public class PetPenyembuhManager : MonoBehaviour
     [SerializeField] public Transform master;
     public NavMeshAgent petNav;
     public Transform pet;
-    private float distance = 5;
-
+    public float healingDistance;
+    public GameObject playerObject;
+    public int healPerTime;
+    public float timeToHeal;
     [HideInInspector] public Animator animator;
-
     PetPenyembuhBaseState currentState;
     public PetPenyembuhIdleState idle = new();
     public PetPenyembuhWalkState walk = new();
     public PetPenyembuhRollState roll = new();
 
+    HealthManager playerHealth;
+    float timerTick = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = playerObject.GetComponent<HealthManager>();
+
         animator = GetComponent<Animator>();
         SwitchState(idle);
     }
@@ -31,20 +38,27 @@ public class PetPenyembuhManager : MonoBehaviour
         if (Vector3.Distance(pet.position, master.position) >= 2)
         {
             petNav.destination = master.position;
-            Debug.Log("Masuk master jadi dest");
         }
         else
         {
-            Debug.Log("Masuk pet sendiri jadi dest");
             petNav.destination = pet.position;
             Quaternion lookRotation = Quaternion.LookRotation(master.position - pet.position);
 
             // Mengatur rotasi pet
             pet.rotation = Quaternion.Euler(0f, lookRotation.eulerAngles.y, 0f);
-            // SwitchState(fire);
         }
         currentState.UpdateState(this);
-        Debug.Log(petNav.destination);
+
+        if (Vector3.Distance(pet.position, master.position) <= healingDistance)
+        {
+            timerTick += Time.deltaTime;
+            // Belum handle Misal game dipause tapi dalam area heal
+            if(timerTick >= timeToHeal)
+            {
+                timerTick = 0f;
+                playerHealth.AddHealth(healPerTime);
+            }
+        }
     }
 
     public void SwitchState(PetPenyembuhBaseState state)
