@@ -17,6 +17,12 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public int GetCoins()
+    {
+        return coin;
+    }
+
+
     public void AddCoin(int val)
     {
         coin += val;
