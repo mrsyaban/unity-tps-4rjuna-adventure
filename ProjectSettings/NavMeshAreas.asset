@@ -146,9 +146,15 @@ NavMeshProjectSettings:
   - serializedVersion: 3
     agentTypeID: -1923039037
     agentRadius: 0.5
+<<<<<<< HEAD
     agentHeight: 1
     agentSlope: 45
     agentClimb: 0.5
+=======
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+>>>>>>> 436bfa98478cee6eb9982167043753640b63f13e
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -166,4 +172,8 @@ NavMeshProjectSettings:
   - KepalaKroco
   - Jendral
   - Raja
+<<<<<<< HEAD
   - PetIncrease
+=======
+  - PetPenyembuh
+>>>>>>> 436bfa98478cee6eb9982167043753640b63f13e

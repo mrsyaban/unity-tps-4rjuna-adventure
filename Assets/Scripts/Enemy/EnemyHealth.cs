@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
 
         hitParticle.Play();
+        GameStateManager.Instance.UpdateOnHitTarget();
 
         healthBar.UpdateHealthBar(maxHealth, health);
 
@@ -42,6 +43,14 @@ public class EnemyHealth : MonoBehaviour
         animator.SetTrigger("Dead");
             
         GetComponent<OrbManager>().DropRandomOrb();
+
+        if (gameObject.name != "Raja")
+        {
+            GetComponent<OrbManager>().DropRandomOrb();
+            if(gameObject.name == "Kroco") GameStateManager.Instance.UpdateKrocoKill();
+            if(gameObject.name == "KepalaKroco") GameStateManager.Instance.UpdateKepalaKrocoKill();
+            if(gameObject.name == "Jendral") GameStateManager.Instance.UpdateJendralKill();
+        }
 
         Debug.Log("Death");
 

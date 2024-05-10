@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1910445280051883141}
   - component: {fileID: 6036002219806510996}
-  - component: {fileID: 1016823084357852541}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -47,18 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   rewardCompletion: 10
-  questObjective: {fileID: 1016823084357852541}
---- !u!114 &1016823084357852541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188384527273299169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72711c158bff1fd44888dfde7439cedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  finishPoint: {fileID: 0}
+  questObjective: {fileID: 0}

@@ -560,14 +560,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2007159688}
   lines:
-  - Ternyata, koin ajaib yang dikumpulkan beresonansi dan menyebabkan ledakan...
+  - Ternyata, koin emas yang dikumpulkan beresonansi dan menyebabkan ledakan...
   - ...yang mengguncang seluruh desa dan menjatuhkan 4R-JUNA ke suatu tempat.
   - '*beep beep beep* anomaly detected. attempting to flee. impossible to flee.'
   - '*BOOM*'
   - '*beep beep beep* preparing to fall.'
   - 4R-JUNA terjatuh di suatu ruang bawah tanah yang gelap.
   - '*beep* scanning area...'
-  - 4R-JUNA menemukan altar tempat pemanggilan Divine Beast.
+  - 4R-JUNA menemukan altar tempat pemanggilan Divine Robot.
   - '*beep* summoning altar detected'
   - '"..."'
   - '*beep beep beep* multiple monsters detected'
@@ -598,6 +598,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9b9f638f14c0d66488d92fb2d91d5a47, type: 3}
   - {fileID: 21300000, guid: b7c4d85251d6e3046a8ff7d95a797617, type: 3}
   - {fileID: 21300000, guid: b7c4d85251d6e3046a8ff7d95a797617, type: 3}
+  nextScene: Scenes/Level03
 --- !u!1 &959187525
 GameObject:
   m_ObjectHideFlags: 0

@@ -560,14 +560,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2007159688}
   lines:
-  - '*beep* area cleared. no monster detected.'
-  - Setelah membasmi semua monster di hutan, 4R-JUNA menemukan sebuah jalan setapak.
-  - Tanpa pikir panjang, 4R-JUNA mengikuti jalan setapak tersebut.
-  - Di ujung jalan setapak, 4R-JUNA menemukan sebuah desa yang terlantar. Ia juga
-    menemukan catatan yang ditinggalkan penduduk desa.
+  - '*beep* unknown area detected.'
+  - Ketika membasmi monster di hutan, 4R-JUNA menemukan sebuah jalan setapak.
+  - '*beep* entering unknown area.'
+  - '*beep* village area detected. no human presence confirmed. entering village.'
+  - Di desa yang terbengkalai  tersebut, 4R-JUNA menemukan sebuah catatan.
   - '*beep* note found. attempting to scan...'
-  - '"Desa ini bernama __, monster telah___. ____ koin ajaib. Kumpulkan___."'
-  - '"__ koin ajaib______ memanggil Divine Beast! Hati-hati__!!!"'
+  - '"Desa __ hancur, monster ___. ____ koin emas. Kumpulkan___."'
+  - '"__ koin emas__ altar__ Divine Robot! Hati-hati__!!!"'
   - '"..."'
   - '*beep beep beep* monsters detected.'
   textSpeed: 0.03
@@ -575,7 +575,8 @@ MonoBehaviour:
   lineImages:
   - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
   - {fileID: 21300000, guid: 7110f0ebaa93d784892125f0dbc624c7, type: 3}
-  - {fileID: 21300000, guid: 7110f0ebaa93d784892125f0dbc624c7, type: 3}
+  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
+  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
   - {fileID: 21300000, guid: 7110f0ebaa93d784892125f0dbc624c7, type: 3}
   - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
   - {fileID: 21300000, guid: 64aa3ab5c0e7d38428336aa9a777c92e, type: 3}
@@ -593,6 +594,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2bc1a9a392de89540937cc637f3415c5, type: 3}
   - {fileID: 21300000, guid: 2bc1a9a392de89540937cc637f3415c5, type: 3}
   - {fileID: 21300000, guid: 2bc1a9a392de89540937cc637f3415c5, type: 3}
+  - {fileID: 21300000, guid: 2bc1a9a392de89540937cc637f3415c5, type: 3}
+  nextScene: Scenes/Level02
 --- !u!1 &959187525
 GameObject:
   m_ObjectHideFlags: 0
