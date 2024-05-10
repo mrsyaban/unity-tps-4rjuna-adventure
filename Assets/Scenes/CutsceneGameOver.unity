@@ -450,7 +450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3f55debc85fe0d4b9c4354643c02212, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac6df98123b02d643b5e97c34681c1f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -560,20 +560,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2007159688}
   lines:
-  - Setelah mengalahkan KVRAWA, tanpa beristirahat 4R-JUNA melanjutkan misinya.
-  - '*beep* my mission...'
-  - '*beep* ...is far from over.'
+  - '*beep* energy depleted...'
+  - '*beep* mission.. failed...'
+  - shutting down
   textSpeed: 0.03
   dialogueImage: {fileID: 155814871}
   lineImages:
+  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
+  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
   - {fileID: 21300000, guid: 7110f0ebaa93d784892125f0dbc624c7, type: 3}
-  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
-  - {fileID: 21300000, guid: b13edf6f2289d4d4d960f477c0db18b6, type: 3}
-  backgroundImage: {fileID: 720384038}
+  backgroundImage: {fileID: 372949052}
   backgroundImages:
-  - {fileID: 21300000, guid: b3f55debc85fe0d4b9c4354643c02212, type: 3}
-  - {fileID: 21300000, guid: b3f55debc85fe0d4b9c4354643c02212, type: 3}
-  - {fileID: 21300000, guid: b3f55debc85fe0d4b9c4354643c02212, type: 3}
+  - {fileID: 21300000, guid: ac6df98123b02d643b5e97c34681c1f9, type: 3}
+  - {fileID: 21300000, guid: ac6df98123b02d643b5e97c34681c1f9, type: 3}
+  - {fileID: 21300000, guid: ac6df98123b02d643b5e97c34681c1f9, type: 3}
+  nextScene: 
 --- !u!1 &959187525
 GameObject:
   m_ObjectHideFlags: 0
