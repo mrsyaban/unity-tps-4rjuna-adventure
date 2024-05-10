@@ -20,6 +20,8 @@ public class RajaManager : MonoBehaviour
     [SerializeField] public float distanceAttack;
     [SerializeField] public int meleAttackCount;
     [SerializeField] public int rangeAttackCount;
+
+    private float damageAoE = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +53,21 @@ public class RajaManager : MonoBehaviour
     public void SwitchState(RajaBaseState state) {
         currentState = state;
         currentState.EnterState(this);
+    }
+
+    private void OnTriggerStay(Collider other) 
+    {
+        string colliderName = other.gameObject.name;
+        Debug.Log("Collided with: " + colliderName); 
+
+        if (other.gameObject.layer == 3) {
+            if (other.gameObject.GetComponentInParent<HealthManager>())
+            {
+                Debug.Log("AOE Damage");
+                HealthManager playerHealth = other.gameObject.GetComponentInParent<HealthManager>();
+                playerHealth.TakeDamage(damageAoE);
+                Debug.Log("Player : " + playerHealth.health);
+            }
+        }   
     }
 }
