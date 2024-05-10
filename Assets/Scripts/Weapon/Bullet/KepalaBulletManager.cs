@@ -3,7 +3,7 @@ using UnityEngine;
 public class KepalaBulletManager : MonoBehaviour
 {
     [SerializeField] float timeToDestroy;
-    private float damage = 2;
+    private float damage = 0;
 
     // float timer;
 

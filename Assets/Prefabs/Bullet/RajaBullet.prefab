@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4975042323023781935}
   - component: {fileID: -1096706665746059051}
   - component: {fileID: -7277110434111185755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RajaBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
