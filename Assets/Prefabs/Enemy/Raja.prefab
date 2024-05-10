@@ -2766,6 +2766,7 @@ GameObject:
   - component: {fileID: -521841738368617772}
   - component: {fileID: 6287959166191641371}
   - component: {fileID: 4251147995789846570}
+  - component: {fileID: 1718174398448091442}
   m_Layer: 0
   m_Name: Raja
   m_TagString: Untagged
@@ -2921,6 +2922,29 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   healthBar: {fileID: 3619925109871377233}
   isDead: 0
+--- !u!136 &1718174398448091442
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836004475591695743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 127
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.85
+  m_Height: 10.01
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.04, z: 0}
 --- !u!1 &4145036871301099801
 GameObject:
   m_ObjectHideFlags: 0

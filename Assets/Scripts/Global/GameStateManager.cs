@@ -34,6 +34,12 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public bool loadSpeed = false;
     public bool loadHealth = false;
+    // BUAT STATISTIK
+    public int bulletShot;
+    // BUAT SETTINGS
+    public string playerName;
+    public string difficulty;
+    public float gameVolume;
 
     private void Awake()
     {
@@ -47,9 +53,61 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void LoadGameState()
+    {
+        // Nanti diisi list saved game kaya punya kinan krn gabisa nilai awal diinisialisasi lewat editor
+    }
+
     public void AddCoin(int val)
     {
         coin += val;
+    }
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
+    }
+
+    public void SetDifficulty(string diff)
+    {
+        difficulty = diff;
+    }
+
+    public void SetGameVolume(float vol)
+    {
+        gameVolume = vol;
+    }
+
+    public void IncreaseGameVolume(int vol)
+    {
+        if(gameVolume + vol > 100)
+        {
+            gameVolume = 100;
+        }
+        else if(gameVolume + vol < 0)
+        {
+            gameVolume = 0;
+        }
+        else
+        {
+            gameVolume += vol;
+        }
+    }
+
+    public void DecreaseGameVolume(int vol)
+    {
+        if(gameVolume - vol > 100)
+        {
+            gameVolume = 100;
+        }
+        else if(gameVolume - vol < 0)
+        {
+            gameVolume = 0;
+        }
+        else
+        {
+            gameVolume -= vol;
+        }
     }
     
     // Method to update player health
