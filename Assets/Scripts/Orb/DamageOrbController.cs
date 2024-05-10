@@ -18,6 +18,7 @@ public class DamageOrbController : MonoBehaviour
 
     private void Consume()
     {
+        GameStateManager.Instance.UpdateDamageOrbStatus();
         Destroy(gameObject);
     }
 }
