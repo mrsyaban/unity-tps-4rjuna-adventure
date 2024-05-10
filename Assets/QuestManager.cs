@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class QuestManager: MonoBehaviour
 {
-    public string level;
+    public int level;
     public int rewardCompletion;
     public Objective questObjective;
     private void Update()
@@ -16,8 +16,9 @@ public class QuestManager: MonoBehaviour
 
     private void OnQuestCompleted()
     {
+        string nextScene = "Scenes/Cutscene0" + (level + 1).ToString();
         GameStateManager.Instance.AddCoin(rewardCompletion);
-        SceneManager.LoadScene("Scenes/GameTest/Level0"+level);
+        NextScene.Next(nextScene);
     }
 
     private bool IsQuestCompleted()
