@@ -768,7 +768,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248815240492774}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -3125,6 +3125,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
 --- !u!4 &90134925005939689 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16,
+    type: 3}
   m_PrefabInstance: {fileID: 90134925005814121}
   m_PrefabAsset: {fileID: 0}
