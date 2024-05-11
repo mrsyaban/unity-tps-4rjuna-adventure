@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RajaWeaponManager: MonoBehaviour
+public class RajaWeaponManager: MonoBehaviour, IEnemyWeapon
 {
     [Header("Fire Rate")]
     [SerializeField] float fireRate;
@@ -29,11 +29,13 @@ public class RajaWeaponManager: MonoBehaviour
     void Start()
     {
         GameObject pet1 = Instantiate(pet, transform.position + new Vector3(0, 0, 2), Quaternion.identity);
+        pet1.GetComponent<PetIncreaseManager>().master = transform;
         PetIncreaseHealth pet1Health = pet1.GetComponent<PetIncreaseHealth>();
         pet1Health.weapon = this;
         pet1Health.index = 1;
 
         GameObject pet2 = Instantiate(pet, transform.position + new Vector3(0, 0, 2), Quaternion.identity);
+        pet2.GetComponent<PetIncreaseManager>().master = transform;
         PetIncreaseHealth pet2Health = pet2.GetComponent<PetIncreaseHealth>();
         pet2Health.weapon = this;
         pet2Health.index = 2;
