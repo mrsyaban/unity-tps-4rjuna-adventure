@@ -3445,6 +3445,10 @@ PrefabInstance:
       value: QuestManager
       objectReference: {fileID: 0}
     - target: {fileID: 6036002219806510996, guid: 91a16c4bdfd520b49ad607c72aa6f698, type: 3}
+      propertyPath: level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036002219806510996, guid: 91a16c4bdfd520b49ad607c72aa6f698, type: 3}
       propertyPath: questObjective
       value: 
       objectReference: {fileID: 859731729}
@@ -7316,3 +7320,4 @@ SceneRoots:
   - {fileID: 128565884}
   - {fileID: 859731727}
   - {fileID: 379622453}
+  - {fileID: 633448953}
