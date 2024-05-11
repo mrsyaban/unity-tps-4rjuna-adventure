@@ -2908,6 +2908,7 @@ MonoBehaviour:
   enemyHealth: {fileID: 4251147995789846570}
   BaseBulletDamage: 0
   BaseAoEDamage: 0
+  pet: {fileID: 3493701705335655702, guid: a1299351d3bc9e64ab21fab53b694682, type: 3}
 --- !u!114 &4251147995789846570
 MonoBehaviour:
   m_ObjectHideFlags: 0

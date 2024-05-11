@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PetHealth : EnemyHealth
+public class PetIncreaseHealth : EnemyHealth
 {
+    [HideInInspector] public RajaWeaponManager weapon;
+    [HideInInspector] public int index;
     private void Update() 
     {
         if (isDead) {
@@ -23,12 +25,14 @@ public class PetHealth : EnemyHealth
         healthBar.UpdateHealthBar(maxHealth, health);
     }
 
-    void Death()
+    public override void Death()
     {
         if(isDead) return;
         isDead = true;
 
         GetComponent<NavMeshAgent>().enabled = false;
+
+        weapon.DisableBuff(index);
 
         Destroy(gameObject, 2.5f);
 

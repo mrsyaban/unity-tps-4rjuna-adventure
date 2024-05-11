@@ -20,11 +20,25 @@ public class RajaWeaponManager: MonoBehaviour
     [Header("Damage")]
     [SerializeField] float BaseBulletDamage;
     [SerializeField] float BaseAoEDamage;
-    [HideInInspector] bool PetBuff1 = false;
-    [HideInInspector] bool PetBuff2 = false;
+
+    [Header("Pet")]
+    [SerializeField] GameObject pet;
+    [HideInInspector] bool PetBuff1 = true;
+    [HideInInspector] bool PetBuff2 = true;
 
     void Start()
     {
+        GameObject pet1 = Instantiate(pet, transform.position + new Vector3(0, 0, 2), Quaternion.identity);
+        PetIncreaseHealth pet1Health = pet1.GetComponent<PetIncreaseHealth>();
+        pet1Health.weapon = this;
+        pet1Health.index = 1;
+
+        GameObject pet2 = Instantiate(pet, transform.position + new Vector3(0, 0, 2), Quaternion.identity);
+        PetIncreaseHealth pet2Health = pet2.GetComponent<PetIncreaseHealth>();
+        pet2Health.weapon = this;
+        pet2Health.index = 2;
+
+
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         fireRateTimer = fireRate;
     }
@@ -62,26 +76,18 @@ public class RajaWeaponManager: MonoBehaviour
 
     public float GetBulletDamage()
     {
-        return BaseBulletDamage * (1 + (PetBuff1 ? 0f : 0.2f) + (PetBuff2 ? 0f : 0.2f));
+        Debug.Log("PetBuff 1 : " + PetBuff1);
+        Debug.Log("PetBuff 2 : " + PetBuff2);
+        Debug.Log("Calculate : " + BaseBulletDamage * (1 + (PetBuff1 ? 0f : 0.2f) + (PetBuff2 ? 0f : 0.2f)));
+        return BaseBulletDamage * (1 + (PetBuff1 ? 0.2f : 0f) + (PetBuff2 ? 0.2f : 0f));
     }
 
     public float GetAoEDamage()
     {
-        return BaseAoEDamage * (1 + (PetBuff1 ? 0f : 0.2f) + (PetBuff2 ? 0f : 0.2f));
+        return BaseAoEDamage * (1 + (PetBuff1 ? 0.2f : 0f) + (PetBuff2 ? 0.2f : 0f));
     }
 
-    public void GiveBuff(int index)
-    {
-        if (index == 1)
-        {
-            PetBuff1 = true;
-        }
-        else if (index == 2)
-        {
-            PetBuff2 = true;
-        }
-    }
-    public void ClearBuff(int index)
+    public void DisableBuff(int index)
     {
         if (index == 1)
         {
