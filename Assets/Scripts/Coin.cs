@@ -15,14 +15,13 @@ public class Coin : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        initialRotation = transform.rotation;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = initialRotation;
-        if (Vector3.Distance(coin.position, player.position) < 3.5)
+        if(Vector3.Distance(coin.position, player.position) < 3.5)
         {
             coinAgent.destination = player.position;
         }
@@ -34,5 +33,4 @@ public class Coin : MonoBehaviour
             //clinkSound.Play();
         }
     }
-
 }
