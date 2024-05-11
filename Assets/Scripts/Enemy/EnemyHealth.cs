@@ -41,6 +41,8 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
 
         animator.SetTrigger("Dead");
+            
+        GetComponent<OrbManager>().DropRandomOrb();
 
         if (gameObject.name != "Raja")
         {

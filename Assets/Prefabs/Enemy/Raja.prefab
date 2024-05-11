@@ -2767,6 +2767,7 @@ GameObject:
   - component: {fileID: 6287959166191641371}
   - component: {fileID: 4251147995789846570}
   - component: {fileID: 1718174398448091442}
+  - component: {fileID: 3859537002403771673}
   m_Layer: 0
   m_Name: Raja
   m_TagString: Untagged
@@ -2900,11 +2901,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.5
-  bullet: {fileID: 780176955485838907, guid: 70a008ec949cda443bbed0f7ebc96122, type: 3}
+  bullet: {fileID: 780176955485838907, guid: e3da3bbec8b2ca746bfbf07152d0ccb4, type: 3}
   bulletSpawner: {fileID: 6169969039507941087}
-  bulletVelocity: 300
+  bulletVelocity: 1000
   bulletPerShot: 1
   enemyHealth: {fileID: 4251147995789846570}
+  BaseBulletDamage: 0
+  BaseAoEDamage: 0
 --- !u!114 &4251147995789846570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,6 +2948,33 @@ CapsuleCollider:
   m_Height: 10.01
   m_Direction: 1
   m_Center: {x: 0, y: 2.04, z: 0}
+--- !u!54 &3859537002403771673
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836004475591695743}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1 &4145036871301099801
 GameObject:
   m_ObjectHideFlags: 0
