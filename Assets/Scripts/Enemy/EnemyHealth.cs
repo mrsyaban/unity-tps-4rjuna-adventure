@@ -9,7 +9,6 @@ public class EnemyHealth : MonoBehaviour
     [HideInInspector] public float health;
     [HideInInspector] public ParticleSystem hitParticle;
     [SerializeField] public HealthBar healthBar;
-    public GameObject coin;
 
     [HideInInspector] public bool isDead = false;
     void Awake()
@@ -45,20 +44,19 @@ public class EnemyHealth : MonoBehaviour
             
         GetComponent<OrbManager>().DropRandomOrb();
         Debug.Log("ENEMYDEAD:" + gameObject.name);
-        if (gameObject.name != "Raja")
+        if (gameObject.CompareTag("Raja"))
         {
             GetComponent<OrbManager>().DropRandomOrb();
-            Instantiate(coin, transform.position, Quaternion.identity);
-            if(gameObject.name.Contains("Kroco")) 
+            if(gameObject.CompareTag("Kroco")) 
             {
                 Debug.Log("KrocoKill");
                 GameStateManager.Instance.UpdateKrocoKill(); 
             }
-            if(gameObject.name.Contains("KepalaKroco")) 
+            if(gameObject.CompareTag("KepalaKroco")) 
             { 
                 GameStateManager.Instance.UpdateKepalaKrocoKill();
             }
-            if(gameObject.name.Contains("Jendral")) 
+            if(gameObject.CompareTag("Jendral")) 
             { 
                 GameStateManager.Instance.UpdateJendralKill(); 
             }

@@ -37,6 +37,7 @@ public class HealthManager : MonoBehaviour {
 
         animator.SetLayerWeight(1, 0);
         animator.SetTrigger("Dead");
+        NextScene.Next("Scenes/CutsceneGameOver");
 
         Debug.Log("Death");
     }
