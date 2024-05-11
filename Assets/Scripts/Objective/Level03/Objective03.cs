@@ -15,9 +15,9 @@ public class Objective03 : Objective
     
     public override bool IsCompleted()
     {
-        int krocoTreshold = 1;
-        int kepalaKrocoTreshold = 0;
-        int jendralTreshold = 0;
+        int krocoTreshold = 15;
+        int kepalaKrocoTreshold = 10;
+        int jendralTreshold = 3;
         
         int krocoKilled = GameStateManager.Instance.krocoKill - curKrocoKilled;
         KrocoUI.SetText("Kroco: " +krocoKilled.ToString()+"/"+krocoTreshold);
@@ -26,7 +26,7 @@ public class Objective03 : Objective
         KepalaKrocoUI.SetText("Kepala Kroco: "+kepalaKrocoKilled.ToString()+"/"+kepalaKrocoTreshold);
         
         int jendralKilled = GameStateManager.Instance.jendralKill - curJendralKilled;
-        JendralUI.SetText("Jendral: "+krocoKilled.ToString()+"/"+jendralTreshold);
+        JendralUI.SetText("Jendral: "+jendralKilled.ToString()+"/"+jendralTreshold);
 
         if (krocoKilled >= krocoTreshold && kepalaKrocoKilled >= kepalaKrocoTreshold && jendralKilled >= jendralTreshold)
         {
