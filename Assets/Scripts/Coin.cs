@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(coin.position, player.position) < 2.5)
+        if(Vector3.Distance(coin.position, player.position) < 3.5)
         {
             coinAgent.destination = player.position;
         }
