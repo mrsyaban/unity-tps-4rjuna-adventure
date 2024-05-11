@@ -43,13 +43,23 @@ public class EnemyHealth : MonoBehaviour
         animator.SetTrigger("Dead");
             
         GetComponent<OrbManager>().DropRandomOrb();
-
+        Debug.Log("ENEMYDEAD:" + gameObject.name);
         if (gameObject.name != "Raja")
         {
             GetComponent<OrbManager>().DropRandomOrb();
-            if(gameObject.name == "Kroco") GameStateManager.Instance.UpdateKrocoKill();
-            if(gameObject.name == "KepalaKroco") GameStateManager.Instance.UpdateKepalaKrocoKill();
-            if(gameObject.name == "Jendral") GameStateManager.Instance.UpdateJendralKill();
+            if(gameObject.name.Contains("Kroco")) 
+            {
+                Debug.Log("KrocoKill");
+                GameStateManager.Instance.UpdateKrocoKill(); 
+            }
+            if(gameObject.name.Contains("KepalaKroco")) 
+            { 
+                GameStateManager.Instance.UpdateKepalaKrocoKill();
+            }
+            if(gameObject.name.Contains("Jendral")) 
+            { 
+                GameStateManager.Instance.UpdateJendralKill(); 
+            }
         }
 
         Debug.Log("Death");
