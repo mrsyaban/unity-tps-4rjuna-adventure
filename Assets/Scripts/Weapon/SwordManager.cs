@@ -11,9 +11,15 @@ public class SwordManager : MonoBehaviour
     public static int noOfClicks = 0;
 
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip attackSound; 
+    private AudioSource audioSource; 
+
+    
     void Start()
     {
         animator = FindParentObjectByName(transform, "PlayerObject").GetComponent<Animator>();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +42,7 @@ public class SwordManager : MonoBehaviour
     {
         animator.SetBool("isSwing", true);
         sword.SetDamage(50);
+        audioSource.PlayOneShot(attackSound);
     }
     
     private GameObject FindParentObjectByName(Transform child, string parentName)

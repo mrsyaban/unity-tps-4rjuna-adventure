@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class ShotGunManager : MonoBehaviour
 {
-    [Header("Fire Rate")]
-    [SerializeField] private float fireRate;
-    private float _fireRateTimer;
-    [SerializeField] private bool semiAuto;
     
     [Header("Bullet Properties")]
     [SerializeField] private GameObject bullet;
@@ -15,6 +11,14 @@ public class ShotGunManager : MonoBehaviour
     [SerializeField] private float xOffset;
     private AimStateManager _aim;
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip fireSound; 
+    private AudioSource audioSource; 
+
+    [Header("Particle Effects")]
+    [SerializeField] private ParticleSystem muzzleFlash; // Referensi ke ParticleSystem untuk muzzle flash
+
+
     private GameObject _rightHand;
     private UnityEngine.Animations.Rigging.MultiAimConstraint _twoBoneIKRight;
     
@@ -24,10 +28,10 @@ public class ShotGunManager : MonoBehaviour
     void Start()
     {
         _aim = GetComponentInParent<AimStateManager>();
-        _fireRateTimer = fireRate;
         animator = FindParentObjectByName(transform, "PlayerObject").GetComponent<Animator>();
         _rightHand = GameObject.Find("JammoPlayer/Rig 1/RightHandAim");
         _twoBoneIKRight = _rightHand.GetComponent<UnityEngine.Animations.Rigging.MultiAimConstraint>();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,16 +55,12 @@ public class ShotGunManager : MonoBehaviour
 
     private bool ShouldFire()
     {
-        _fireRateTimer += Time.deltaTime;
-        if (_fireRateTimer < fireRate) return false;
-        if (semiAuto && Input.GetKeyDown(KeyCode.Mouse0)) return true;
-        if (!semiAuto && Input.GetKey(KeyCode.Mouse0)) return true;
+        if (Input.GetKeyDown(KeyCode.Mouse0)) return true;
         return false;
     }
 
     private void Fire()
     {
-        _fireRateTimer = 0;
         barrelPos.LookAt(_aim.aimPos);
         for (int i = 0; i < bulletPerShot; i++)
         {
@@ -73,6 +73,8 @@ public class ShotGunManager : MonoBehaviour
             SpawnBullet(new Vector3(0.1f, 0.1f, 0f));
             SpawnBullet(new Vector3(0f, 0.1f, 0.1f));
         }
+        audioSource.PlayOneShot(fireSound);
+        muzzleFlash.Play();
     }
 
     private void SpawnBullet(Vector3 offset)
