@@ -14,12 +14,21 @@ public class HandGunManager : MonoBehaviour
     [SerializeField] private int bulletPerShot;
     private AimStateManager _aim;
     public float damage = 10;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip fireSound; 
+    private AudioSource audioSource; 
+
+    [Header("Particle Effects")]
+    [SerializeField] private ParticleSystem muzzleFlash; // Referensi ke ParticleSystem untuk muzzle flash
+
     
     // Start is called before the first frame update
     void Start()
     {
         _aim = GetComponentInParent<AimStateManager>();
         _fireRateTimer = fireRate;
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,5 +64,7 @@ public class HandGunManager : MonoBehaviour
             Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
             rb.AddForce(barrelPos.forward * bulletVelocity, ForceMode.Impulse);
         }
+        audioSource.PlayOneShot(fireSound);
+        muzzleFlash.Play();
     }
 }
