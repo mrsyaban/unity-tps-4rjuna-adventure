@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1623,6 +1623,7 @@ MonoBehaviour:
   image2: {fileID: 155814871}
   button1: {fileID: 2013581162}
   button2: {fileID: 1029841698}
+  button3: {fileID: 2055053773}
   newImage1: {fileID: 21300000, guid: 8306a111b47cdba4f8a61af3f4c03a5f, type: 3}
   newImage2: {fileID: 21300000, guid: 44b2436fa1fb59c4fae7c65f32b9e435, type: 3}
   transactionSound: {fileID: 8300000, guid: 086f56e0aeb2c994ebc81ad124580341, type: 3}

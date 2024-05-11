@@ -658,7 +658,7 @@ MonoBehaviour:
   enemyNav: {fileID: 0}
   enemy: {fileID: 0}
   animator: {fileID: 0}
-  distanceAttack: 2.5
+  distanceAttack: 1
 --- !u!114 &5021488256688281771
 MonoBehaviour:
   m_ObjectHideFlags: 0

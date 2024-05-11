@@ -302,7 +302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 294}
-  m_SizeDelta: {x: 800, y: 200}
+  m_SizeDelta: {x: 2997.6, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3837254295576683171
 CanvasRenderer:
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OPM The Game
+  m_text: Adventure of 4R-JUNA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 109.8
+  m_fontSize: 110
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65607a5bb64198e43aa0ee0a36ade393, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21906c2977c2b5945b54e6e84b0a3629, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
