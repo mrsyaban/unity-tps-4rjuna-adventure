@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using TMPro;
 
 public class SavedList : MonoBehaviour
@@ -19,32 +20,100 @@ public class SavedList : MonoBehaviour
         }
 
         string[] saveFiles = Directory.GetFiles(SAVE_FOLDER);
+        string[] files = SaveSystem.LoadRecentSaveSlots();
+        int i = 0;
 
-        foreach (string saveFile in saveFiles)
+        foreach (string saveFile in files)
         {
             Debug.Log(saveFile);
             if (!saveFile.EndsWith(".meta"))
             {
-                CreateButton(Path.GetFileName(saveFile));
+                AssignButton(Path.GetFileName(saveFile), i);
+                i++;
             }
         }
     }
 
-    void CreateButton(string fileName)
+    void AssignButton(string fileName, int index)
     {
-        Button newButton = Instantiate(buttonPrefab, transform);
-        newButton.transform.localScale = new Vector3(2f, 2f, 2f); 
-
-        TextMeshProUGUI buttonText = newButton.GetComponentInChildren<TextMeshProUGUI>();
-        if (buttonText != null)
+        string buttonName;
+        switch (index)
         {
-            buttonText.text = fileName;
-        }
-        else
-        {
-            Debug.LogError("No TextMeshProUGUI component found in the button prefab's children.");
+            case 0:
+                buttonName = "FirstButton";
+                break;
+            case 1:
+                buttonName = "SecondButton";
+                break;
+            case 2:
+                buttonName = "ThirdButton";
+                break;
+            default:
+                Debug.LogError("Invalid index: " + index);
+                return;
         }
 
-        newButton.onClick.AddListener(() => SaveSystem.LoadGameState(fileName));
+        GameObject buttonObj = GameObject.Find(buttonName);
+        if (buttonObj == null)
+        {
+            Debug.LogError("Button not found: " + buttonName);
+            return;
+        }
+
+        Button button = buttonObj.GetComponent<Button>();
+        if (button == null)
+        {
+            Debug.LogError("Button component not found on object: " + buttonName);
+            return;
+        }
+
+        // Set button text
+        TextMeshProUGUI[] buttonTexts = button.GetComponentsInChildren<TextMeshProUGUI>();
+
+        foreach (TextMeshProUGUI buttonText in buttonTexts)
+        {
+            if (buttonText.name == "Name")
+            {
+                buttonText.text = GetNameFromFileName(fileName);
+                buttonText.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            }
+            else if (buttonText.name == "Date")
+            {
+                buttonText.text = GetDateFromFileName(fileName);
+                buttonText.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            }
+        }
+
+        string GetNameFromFileName(string fileName)
+        {
+            string[] parts = fileName.Split('_');
+            if (parts.Length >= 2)
+            {
+                return parts[0];
+            }
+            else
+            {
+                Debug.LogError("Invalid File Name Format: " + fileName);
+                return "Invalid File Name Format";
+            }
+        }
+
+        string GetDateFromFileName(string fileName)
+        {
+            // Extract date from the file name (assuming the file name format is yyyy-MM-dd-HH-mm-ss.json)
+            string[] parts = fileName.Split('-');
+            if (parts.Length >= 3)
+            {
+                return parts[0] + "-" + parts[1] + "-" + parts[2];
+            }
+            else
+            {
+                return "Invalid Date";
+            }
+        }
+        buttonObj.SetActive(true);
+
+        // Add click listener
+        button.onClick.AddListener(() => SaveSystem.LoadGameState(fileName));
     }
 }
