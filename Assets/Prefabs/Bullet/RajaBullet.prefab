@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3650421112114420905}
   - component: {fileID: 4975042323023781935}
   - component: {fileID: -1096706665746059051}
-  - component: {fileID: -7277110434111185755}
+  - component: {fileID: -2766855542120025116}
   m_Layer: 7
   m_Name: RajaBullet
   m_TagString: PlayerBullet
@@ -239,7 +239,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &-7277110434111185755
+--- !u!114 &-2766855542120025116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 780176955485838907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cf99496052a014abb9895b64c2d4ba, type: 3}
+  m_Script: {fileID: 11500000, guid: b866692c2f81f8d4e8f63a2932f1d6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 5

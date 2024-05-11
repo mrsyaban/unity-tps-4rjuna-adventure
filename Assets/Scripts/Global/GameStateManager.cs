@@ -34,8 +34,12 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public bool loadSpeed = false;
     public bool loadHealth = false;
-    // BUAT STATISTIK
-    public int bulletShot;
+    // karena player bisa punya 2 pet saja 
+    public bool[] petsBought = new []{false, false};
+    // -1 artinya blm kebeli, 0 artinya udah mati
+    public float[] petsHealth = new[] { -1f, -1f };
+// BUAT STATISTIK
+public int bulletShot;
     // BUAT SETTINGS
     public string playerName;
     public string difficulty;
@@ -57,6 +61,12 @@ public class GameStateManager : MonoBehaviour
     {
         // Nanti diisi list saved game kaya punya kinan krn gabisa nilai awal diinisialisasi lewat editor
     }
+
+    public int GetCoins()
+    {
+        return coin;
+    }
+
 
     public void AddCoin(int val)
     {

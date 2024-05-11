@@ -25,6 +25,12 @@ public class HealthManager : MonoBehaviour {
         if (health <= 0) Death();
     }
 
+    public void AddHealth(float heal)
+    {
+        health += heal;
+        playerHealthBar.UpdateHealthBar(maxHealth, health);
+    }
+
     public void Death()
     {
         Animator animator = GetComponent<Animator>();
