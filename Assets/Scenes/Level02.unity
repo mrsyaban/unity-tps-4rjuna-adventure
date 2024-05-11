@@ -14411,7 +14411,7 @@ PrefabInstance:
       objectReference: {fileID: 2019942515}
     - target: {fileID: 6036002219806510996, guid: 91a16c4bdfd520b49ad607c72aa6f698, type: 3}
       propertyPath: rewardCompletion
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

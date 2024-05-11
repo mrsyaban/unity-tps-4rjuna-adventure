@@ -2879,6 +2879,10 @@ PrefabInstance:
       propertyPath: questObjective
       value: 
       objectReference: {fileID: 986477004}
+    - target: {fileID: 6036002219806510996, guid: 91a16c4bdfd520b49ad607c72aa6f698, type: 3}
+      propertyPath: rewardCompletion
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
