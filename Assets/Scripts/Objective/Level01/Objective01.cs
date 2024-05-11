@@ -9,7 +9,7 @@ public class Objective01: Objective
     public override bool IsCompleted()
     {
         float playerDistance = Vector3.Distance(finishPoint.position, player.position);
-        if (playerDistance < 2f)
+        if (playerDistance < 3f)
         {
             return true;
         }

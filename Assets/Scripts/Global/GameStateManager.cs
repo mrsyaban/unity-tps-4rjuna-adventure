@@ -45,6 +45,10 @@ public class GameStateManager : MonoBehaviour
     public string playerName;
     public string difficulty;
     public float gameVolume;
+    
+    // Buat Quest
+    public float timeLimit = 60f;
+    private float timeRemaining; 
 
     private void Awake()
     {

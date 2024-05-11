@@ -30,6 +30,7 @@ public class PauseController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
+            
         }
     }
 
@@ -40,6 +41,8 @@ public class PauseController : MonoBehaviour
         loadMenuUI.SetActive(false);
         Time.timeScale = 0f;
         Debug.Log("PAUSE");
+        // Cursor.lockState = CursorLockMode.None;
+        // Cursor.visible = true;
     }
 
     public void ToggleResume()
@@ -48,6 +51,7 @@ public class PauseController : MonoBehaviour
         pauseMenuUI.SetActive(false);
         hudMenuUI.SetActive(true);
         Time.timeScale = 1.0f;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ToggleSaveMenu()
