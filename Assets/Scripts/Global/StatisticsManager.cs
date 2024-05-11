@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,17 +9,22 @@ public class StatisticsManager : MonoBehaviour
 {
     public GameObject statisticsRows;
     public GameObject[] rows;
+    private static readonly string SAVE_FOLDER = "/Saves/";
 
     private void Start()
-    {   
+    {
         //var entries = statisticsRows.GetComponent<RectTransform>();
         //Debug.Log(entries.Length);
         //Debug.Log(entries.ToString());
         //var childEntries = entries.GetComponents<RectTransform>();
+        string[] fileNames = SaveSystem.LoadRecentSaveSlots();
 
-        for (var i = 0; i < rows.Length; i++)
+        for (var i = 0; i < fileNames.Length; i++)
         {
-            Debug.Log(rows[i].name);
+            //Debug.Log(rows[i].name);
+            string filePath = SAVE_FOLDER + fileNames[i];
+            string json = File.ReadAllText(filePath);
+            JsonUtility.FromJsonOverwrite(json, GameStateManager.Instance);
             var entryValues = rows[i].GetComponentsInChildren<TMP_Text>();
             entryValues[0].text = GameStateManager.Instance.playerName;
             entryValues[1].text = (GameStateManager.Instance.onHitTarget / (GameStateManager.Instance.bulletShot != 0 ? GameStateManager.Instance.bulletShot : 1)).ToString();

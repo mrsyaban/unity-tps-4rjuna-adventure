@@ -834,6 +834,7 @@ MonoBehaviour:
   health: 100
   hitParticle: {fileID: 0}
   healthBar: {fileID: 2313724839504834590}
+  coin: {fileID: 3129200342344496425, guid: 3e29573f06c0a7e4fa986fff41de17af, type: 3}
   isDead: 0
 --- !u!114 &1205745789728877391
 MonoBehaviour:
@@ -3125,7 +3126,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
 --- !u!4 &90134925005939689 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
   m_PrefabInstance: {fileID: 90134925005814121}
   m_PrefabAsset: {fileID: 0}

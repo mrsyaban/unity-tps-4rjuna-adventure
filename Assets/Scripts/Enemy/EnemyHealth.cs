@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     [HideInInspector] public float health;
     [HideInInspector] public ParticleSystem hitParticle;
     [SerializeField] public HealthBar healthBar;
+    public GameObject coin;
 
     [HideInInspector] public bool isDead = false;
     void Awake()
@@ -47,6 +48,7 @@ public class EnemyHealth : MonoBehaviour
         if (gameObject.name != "Raja")
         {
             GetComponent<OrbManager>().DropRandomOrb();
+            Instantiate(coin, transform.position, Quaternion.identity);
             if(gameObject.name.Contains("Kroco")) 
             {
                 Debug.Log("KrocoKill");
