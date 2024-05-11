@@ -22,7 +22,7 @@ public class StatisticsManager : MonoBehaviour
         for (var i = 0; i < fileNames.Length; i++)
         {
             //Debug.Log(rows[i].name);
-            string filePath = SAVE_FOLDER + fileNames[i];
+            string filePath = fileNames[i];
             string json = File.ReadAllText(filePath);
             JsonUtility.FromJsonOverwrite(json, GameStateManager.Instance);
             var entryValues = rows[i].GetComponentsInChildren<TMP_Text>();
