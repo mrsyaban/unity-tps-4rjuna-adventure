@@ -36,6 +36,7 @@ public class GameMenuManager : MonoBehaviour
     public void StartGame()
     {
         NextScene.Next("Scenes/Cutscene01");
+        //GameStateManager.Instance = null
     }
 
     public void QuitGame()
