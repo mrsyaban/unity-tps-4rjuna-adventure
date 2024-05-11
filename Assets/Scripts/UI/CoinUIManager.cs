@@ -15,6 +15,9 @@ public class CoinUIManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        coinAmountText.SetText(GameStateManager.Instance.coin.ToString());
+        if (GameStateManager.Instance.coin == int.MaxValue)
+            coinAmountText.SetText("\u221e");
+        else 
+            coinAmountText.SetText(GameStateManager.Instance.coin.ToString());
     }
 }
