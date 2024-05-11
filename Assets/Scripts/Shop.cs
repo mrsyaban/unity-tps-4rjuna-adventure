@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     public Image image2;
     public Button button1;
     public Button button2;
+    public Button button3;
     public Sprite newImage1;
     public Sprite newImage2;
     public AudioClip transactionSound; 
@@ -26,6 +27,7 @@ public class Shop : MonoBehaviour
         CheckButtonAccessibility();
         button1.onClick.AddListener(() => ProcessTransaction(0, cost1, image1, button1, newImage1));
         button2.onClick.AddListener(() => ProcessTransaction(1, cost2, image2, button2, newImage2));
+        button3.onClick.AddListener(() => NextScene.Next("Scenes/Cutscene04"));
         UpdateCoinDisplay();
     }
 
