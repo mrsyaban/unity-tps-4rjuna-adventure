@@ -26,6 +26,8 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public int onHitTarget = 0;
     [HideInInspector]
+    public int rajaKill = 0;
+    [HideInInspector]
     public int jendralKill = 0;
     [HideInInspector]
     public int kepalaKrocoKill = 0;
@@ -175,6 +177,11 @@ public class GameStateManager : MonoBehaviour
         onHitTarget ++;
     }
 
+    // Method to update raja kill count
+    public void UpdateRajaKill()
+    {
+        rajaKill ++;
+    }
     // Method to update jendral kill count
     public void UpdateJendralKill()
     {

@@ -60,6 +60,8 @@ public class EnemyHealth : MonoBehaviour
             { 
                 GameStateManager.Instance.UpdateJendralKill(); 
             }
+        } else {
+            GameStateManager.Instance.UpdateRajaKill();
         }
 
         Debug.Log("Death");
