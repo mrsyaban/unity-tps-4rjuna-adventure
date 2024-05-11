@@ -14,33 +14,38 @@ public class Shop : MonoBehaviour
     public Button button2;
     public Sprite newImage1;
     public Sprite newImage2;
+    public AudioClip transactionSound; 
 
-    private const int cost1 = 15; 
-    private const int cost2 = 20; 
-
+    private AudioSource audioSource; 
+    private const int cost1 = 15;
+    private const int cost2 = 20;
 
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>(); 
         CheckButtonAccessibility();
-        button1.onClick.AddListener(() => ProcessTransaction(cost1, image1, button1, newImage1));
-        button2.onClick.AddListener(() => ProcessTransaction(cost2, image2, button2, newImage2));
+        button1.onClick.AddListener(() => ProcessTransaction(0, cost1, image1, button1, newImage1));
+        button2.onClick.AddListener(() => ProcessTransaction(1, cost2, image2, button2, newImage2));
         UpdateCoinDisplay();
     }
+
     void CheckButtonAccessibility()
     {
         button1.interactable = button1.interactable && GameStateManager.Instance.GetCoins() >= cost1;
         button2.interactable = button2.interactable && GameStateManager.Instance.GetCoins() >= cost2;
     }
 
-    void ProcessTransaction(int cost, Image image, Button button, Sprite newSprite)
+    void ProcessTransaction(int petIndex, int cost, Image image, Button button, Sprite newSprite)
     {
         if (GameStateManager.Instance.GetCoins() >= cost)
         {
-            GameStateManager.Instance.AddCoin(-cost); 
-            UpdateCoinDisplay(); 
+            GameStateManager.Instance.AddCoin(-cost);
+            UpdateCoinDisplay();
             button.interactable = false;
             button.GetComponentInChildren<TextMeshProUGUI>().text = "Summoned";
             StartCoroutine(FadeAndChangeSprite(image, newSprite));
+            GameStateManager.Instance.BuyPet(petIndex);
+            audioSource.PlayOneShot(transactionSound); 
         }
     }
 
@@ -63,8 +68,8 @@ public class Shop : MonoBehaviour
     {
         if (GameStateManager.Instance != null)
         {
-            textComponent3.text = "Coins: " + GameStateManager.Instance.GetCoins();
+            textComponent3.text = GameStateManager.Instance.GetCoins().ToString();
         }
-        CheckButtonAccessibility(); 
+        CheckButtonAccessibility();
     }
 }

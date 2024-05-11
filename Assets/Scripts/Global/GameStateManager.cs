@@ -38,8 +38,9 @@ public class GameStateManager : MonoBehaviour
     public bool[] petsBought = new []{false, false};
     // -1 artinya blm kebeli, 0 artinya udah mati
     public float[] petsHealth = new[] { -1f, -1f };
-// BUAT STATISTIK
-public int bulletShot;
+    
+    // BUAT STATISTIK
+    public int bulletShot;
     // BUAT SETTINGS
     public string playerName;
     public string difficulty;
@@ -186,5 +187,10 @@ public int bulletShot;
     public void UpdateKrocoKill()
     {
         krocoKill ++;
+    }
+
+    public void BuyPet(int i)
+    {
+        petsBought[i] = true;
     }
 }

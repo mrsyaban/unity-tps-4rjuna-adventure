@@ -14,6 +14,7 @@ public class JendralManager : MonoBehaviour
     public JendralWalkState walk = new JendralWalkState();
     public JendralAttackState attack = new JendralAttackState();
     private bool isDead = false;
+    [SerializeField] public JendralWeaponManager weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -44,5 +45,18 @@ public class JendralManager : MonoBehaviour
     public void SwitchState(JendralBaseState state) {
         currentState = state;
         currentState.EnterState(this);
+    }
+
+    private void OnTriggerStay(Collider other) 
+    {
+        if (other.gameObject.layer == 3) {
+            if (other.gameObject.GetComponentInParent<HealthManager>())
+            {
+                Debug.Log("AOE Damage");
+                HealthManager playerHealth = other.gameObject.GetComponentInParent<HealthManager>();
+                playerHealth.TakeDamage(weapon.GetAoEDamage());
+                Debug.Log("Player : " + playerHealth.health);
+            }
+        }   
     }
 }
