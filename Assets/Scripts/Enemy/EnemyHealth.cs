@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
             
         GetComponent<OrbManager>().DropRandomOrb();
         Debug.Log("ENEMYDEAD:" + gameObject.name);
-        if (gameObject.CompareTag("Raja"))
+        if (!gameObject.CompareTag("Raja"))
         {
             GetComponent<OrbManager>().DropRandomOrb();
             if(gameObject.CompareTag("Kroco")) 

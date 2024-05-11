@@ -2656,7 +2656,6 @@ MonoBehaviour:
   health: 0
   hitParticle: {fileID: 0}
   healthBar: {fileID: 842498105109381099}
-  coin: {fileID: 3129200342344496425, guid: 3e29573f06c0a7e4fa986fff41de17af, type: 3}
   isDead: 0
 --- !u!114 &4250396705889160816
 MonoBehaviour:
