@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene03.unity
     guid: 71be6a4c4094d7744ba664e4b6b21732
   - enabled: 1
+    path: Assets/Scenes/Cutscene04.unity
+    guid: 54080e437185c0d47ab5f0303f1b7081
+  - enabled: 1
     path: Assets/Scenes/GameMenuScene.unity
     guid: 0c8d1fba0d65f3a499ab95304569d82c
   m_configObjects: {}

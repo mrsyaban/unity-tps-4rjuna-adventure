@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3477,6 +3477,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f6a43b7f28b6c42890ce7153345c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &880025823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7838514508986632005, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_Name
+      value: PetManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715510611577004420, guid: c3262de077febf24a84367fec8297e36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3262de077febf24a84367fec8297e36, type: 3}
 --- !u!1 &916377278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1401507406560278165, guid: 5dcff9e2eb341014c8098f8c95d71fdd, type: 3}
@@ -5145,6 +5202,22 @@ PrefabInstance:
     - target: {fileID: 266344222175847303, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
       propertyPath: m_Name
       value: GameStateManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989656073050333270, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
+      propertyPath: petsBought.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989656073050333270, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
+      propertyPath: petsBought.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989656073050333270, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
+      propertyPath: petsHealth.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989656073050333270, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
+      propertyPath: petsHealth.Array.data[1]
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7866824068808640646, guid: f4f1865830a71ae4cbcbbd02a4b8aa1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7321,3 +7394,4 @@ SceneRoots:
   - {fileID: 859731727}
   - {fileID: 379622453}
   - {fileID: 633448953}
+  - {fileID: 880025823}

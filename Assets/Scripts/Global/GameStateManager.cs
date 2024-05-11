@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance;
-    [HideInInspector]
+    // [HideInInspector]
     public int coin;
     [HideInInspector]
     public float playerHealth;
@@ -39,7 +39,7 @@ public class GameStateManager : MonoBehaviour
     // karena player bisa punya 2 pet saja 
     public bool[] petsBought = new []{false, false};
     // -1 artinya blm kebeli, 0 artinya udah mati
-    public float[] petsHealth = new[] { -1f, -1f };
+    public float[] petsHealth = new[] { 100f, 100f };
     
     // BUAT STATISTIK
     public int bulletShot;
@@ -203,6 +203,6 @@ public class GameStateManager : MonoBehaviour
     public void BuyPet(int i)
     {
         petsBought[i] = true;
-        petsHealth[i] = 100f;
+        petsHealth[i] = 100;
     }
 }
