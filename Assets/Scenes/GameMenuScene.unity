@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 167284643}
   - component: {fileID: 167284642}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ThirdButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &460634200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,7 +4155,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bagas Jancok
+  m_text: 'Tetris
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -5603,7 +5605,7 @@ GameObject:
   - component: {fileID: 1145089315}
   - component: {fileID: 1145089314}
   m_Layer: 5
-  m_Name: Button
+  m_Name: FirstButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6690,7 +6692,7 @@ GameObject:
   - component: {fileID: 1642238252}
   - component: {fileID: 1642238251}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SecondButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7846,6 +7848,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 0}
+  button1: {fileID: 1145089312}
+  button2: {fileID: 1642238249}
+  button3: {fileID: 167284640}
 --- !u!1 &1936005229
 GameObject:
   m_ObjectHideFlags: 0
