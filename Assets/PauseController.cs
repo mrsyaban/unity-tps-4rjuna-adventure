@@ -22,6 +22,7 @@ public class PauseController : MonoBehaviour
     {
         savedText = inputField.text;
         SaveSystem.SaveGameState(savedText);
+        SceneManager.LoadScene("GameMenuScene");
     } 
 
     void Update()
