@@ -12,6 +12,8 @@ public class CheatCodeTwiceSpeed:CheatCodeBase
     }
     public override void RunCheat()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        MovementStateManager movement = player.GetComponent<MovementStateManager>();
+        movement.currentMoveSpeed *= 2; 
     }
 }

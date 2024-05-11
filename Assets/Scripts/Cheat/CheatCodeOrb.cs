@@ -13,6 +13,8 @@ public class CheatCodeOrb:CheatCodeBase
     
     public override void RunCheat()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        HealthManager health = player.GetComponent<HealthManager>();
+        health.AddHealth(20);
     }
 }

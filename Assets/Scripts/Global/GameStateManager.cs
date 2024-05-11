@@ -203,5 +203,6 @@ public class GameStateManager : MonoBehaviour
     public void BuyPet(int i)
     {
         petsBought[i] = true;
+        petsHealth[i] = 100f;
     }
 }

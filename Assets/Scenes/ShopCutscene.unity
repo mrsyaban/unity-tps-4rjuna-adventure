@@ -1478,11 +1478,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 720384036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaaf4a092a9987b4b9c2f4ca8496bd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: fc0a5813653cbdc4a991ac72bce37a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent1: {fileID: 681113190}
-  textComponent2: {fileID: 0}
+  textComponent2: {fileID: 958210444}
   textComponent3: {fileID: 464379627}
   image1: {fileID: 775521596}
   image2: {fileID: 155814871}
