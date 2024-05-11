@@ -9,6 +9,7 @@ TagManager:
   - EnemyManager
   - PlayerPet
   - Enemy
+  - CheatUI
   layers:
   - Default
   - TransparentFX
