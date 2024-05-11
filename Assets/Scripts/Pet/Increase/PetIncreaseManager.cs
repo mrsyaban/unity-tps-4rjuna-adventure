@@ -14,7 +14,6 @@ public class PetIncreaseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        master = GameObject.FindGameObjectWithTag("Raja").transform;
         petNav = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Transform>();
     }

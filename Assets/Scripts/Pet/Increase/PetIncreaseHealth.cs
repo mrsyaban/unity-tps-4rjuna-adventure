@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class PetIncreaseHealth : EnemyHealth
 {
-    [HideInInspector] public RajaWeaponManager weapon;
+    [HideInInspector] public IEnemyWeapon weapon;
     [HideInInspector] public int index;
     private void Update() 
     {

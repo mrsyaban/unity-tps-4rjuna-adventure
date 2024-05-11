@@ -2485,9 +2485,11 @@ GameObject:
   - component: {fileID: 2436503838937441524}
   - component: {fileID: 5445770686409441828}
   - component: {fileID: 5769712578407120090}
+  - component: {fileID: 4250396705889160816}
+  - component: {fileID: 2608434339974100972}
   m_Layer: 0
   m_Name: Jendral
-  m_TagString: Untagged
+  m_TagString: Jendral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2564,8 +2566,8 @@ Rigidbody:
   m_GameObject: {fileID: 8665317238552154748}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2580,8 +2582,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!195 &3187619060780243169
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2620,6 +2622,7 @@ MonoBehaviour:
   enemyNav: {fileID: 0}
   enemy: {fileID: 0}
   animator: {fileID: 0}
+  weapon: {fileID: 4250396705889160816}
 --- !u!114 &5445770686409441828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,6 +2657,44 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   healthBar: {fileID: 842498105109381099}
   isDead: 0
+--- !u!114 &4250396705889160816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665317238552154748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff6792215d126247a642e070c4d075a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseSwordDamage: 3
+  BaseAoEDamage: 3
+  pet: {fileID: 3493701705335655702, guid: a1299351d3bc9e64ab21fab53b694682, type: 3}
+--- !u!136 &2608434339974100972
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665317238552154748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 127
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.8
+  m_Height: 10.09
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8818135485207522241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2901,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3219895744617058729}
     m_Modifications:
+    - target: {fileID: -7219619373963338343, guid: 17a5c7a1d0b2ca44090949e450f2df1c, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 4250396705889160816}
     - target: {fileID: 1702990712743346469, guid: 17a5c7a1d0b2ca44090949e450f2df1c, type: 3}
       propertyPath: m_Name
       value: Sword

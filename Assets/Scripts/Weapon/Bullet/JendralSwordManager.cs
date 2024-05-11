@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JendralSwordManager : MonoBehaviour
 {
-    private float damage = 5;
+    [SerializeField] public JendralWeaponManager weapon;
+    // private float damage = 5;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +16,7 @@ public class JendralSwordManager : MonoBehaviour
         {
             Debug.Log("Damage");
             HealthManager playerHealth = other.gameObject.GetComponentInParent<HealthManager>();
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(weapon.GetSwordDamage());
         }
     }
 }

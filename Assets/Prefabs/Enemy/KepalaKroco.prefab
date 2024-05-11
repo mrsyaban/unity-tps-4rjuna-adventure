@@ -661,9 +661,10 @@ GameObject:
   - component: {fileID: 455980661559667407}
   - component: {fileID: 1147765193258202176}
   - component: {fileID: 2244030474408327576}
+  - component: {fileID: 1205745789728877391}
   m_Layer: 0
   m_Name: KepalaKroco
-  m_TagString: Untagged
+  m_TagString: KepalaKroco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,8 +758,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!195 &-5980664047773625478
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -834,6 +835,23 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   healthBar: {fileID: 2313724839504834590}
   isDead: 0
+--- !u!114 &1205745789728877391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9aeeeea7b68655488dd8f4786830585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbPrefabs:
+  - {fileID: 1975959190090480, guid: ac7740b3a60987644834a953eb55078e, type: 3}
+  - {fileID: 1518366863219760, guid: c530f62b93650b74ba4b1342d10a0914, type: 3}
+  - {fileID: 1223526616464650, guid: 0169b09a2f9c34745ad66bfcde0e57d2, type: 3}
+  deathDelay: 2
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,7 +2843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mob: {fileID: 3136820629370392942, guid: defa3fcfff7f8bf4798b50d06fca1f3f, type: 3}
-  timer: 15
+  timer: 25
 --- !u!1 &4998309039223605368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3125,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
 --- !u!4 &90134925005939689 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16, type: 3}
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a9b36f4ab7e9e154eb47ae39fb5d1b16,
+    type: 3}
   m_PrefabInstance: {fileID: 90134925005814121}
   m_PrefabAsset: {fileID: 0}

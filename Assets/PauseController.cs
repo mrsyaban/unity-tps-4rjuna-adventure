@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class PauseController : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject hudMenuUI;
+    public GameObject loadMenuUI;
+    public TMP_InputField inputField;
+    public Button saveButton;
+    private string savedText;
 
     void Start()
     {
@@ -13,8 +20,10 @@ public class PauseController : MonoBehaviour
     }
     public void Save()
     {
-        SaveSystem.SaveGameState();
-    }
+        savedText = inputField.text;
+        SaveSystem.SaveGameState(savedText);
+        SceneManager.LoadScene("GameMenuScene");
+    } 
 
     void Update()
     {
@@ -24,16 +33,32 @@ public class PauseController : MonoBehaviour
         }
     }
 
-    void TogglePauseMenu()
+    public void TogglePauseMenu()
     {
-        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-        hudMenuUI.SetActive(!hudMenuUI.activeSelf);
-        Time.timeScale = pauseMenuUI.activeSelf ? 0f : 1f;
+        pauseMenuUI.SetActive(true);
+        hudMenuUI.SetActive(false);
+        loadMenuUI.SetActive(false);
+        Time.timeScale = 0f;
+        Debug.Log("PAUSE");
     }
 
+    public void ToggleResume()
+    {
+        Debug.Log("RESUME");
+        pauseMenuUI.SetActive(false);
+        hudMenuUI.SetActive(true);
+        Time.timeScale = 1.0f;
+    }
+
+    public void ToggleSaveMenu()
+    {
+        Debug.Log("SAVE");
+        loadMenuUI.SetActive(true);
+        pauseMenuUI.SetActive(false);
+    }
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
-        Application.Quit();
+        SceneManager.LoadScene("GameMenuScene");
     }
 }
