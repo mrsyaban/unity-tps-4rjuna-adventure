@@ -4389,6 +4389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  sword: {fileID: 5675895555451934079}
 --- !u!1 &5048622075437774043
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,6 +5259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317830552307912625}
+  - component: {fileID: 1603857593597276609}
   - component: {fileID: 6382590477961789347}
   - component: {fileID: 5675895555451934079}
   m_Layer: 0
@@ -5276,12 +5278,39 @@ Transform:
   m_GameObject: {fileID: 6624749609264376233}
   serializedVersion: 2
   m_LocalRotation: {x: 0.007052152, y: 0.06502184, z: 0.107595004, w: 0.99204123}
-  m_LocalPosition: {x: 0.405, y: 0.054, z: -0.16}
+  m_LocalPosition: {x: 0.4, y: 0.054, z: -0.199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4988589223366753319}
   m_LocalEulerAnglesHint: {x: 0, y: 7.5, z: 12.38}
+--- !u!54 &1603857593597276609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624749609264376233}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!136 &6382590477961789347
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5297,14 +5326,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.1
-  m_Height: 1.43
+  m_Height: 1
   m_Direction: 0
-  m_Center: {x: -0.32, y: 0, z: 0}
+  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!114 &5675895555451934079
 MonoBehaviour:
   m_ObjectHideFlags: 0

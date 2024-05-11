@@ -31,16 +31,18 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0) Death();
     }
 
-    void Death()
+    public virtual void Death()
     {
         if(isDead) return;
-        this.isDead = true;
+        isDead = true;
 
         Animator animator = GetComponent<Animator>();
 
         GetComponent<NavMeshAgent>().enabled = false;
 
         animator.SetTrigger("Dead");
+            
+        GetComponent<OrbManager>().DropRandomOrb();
 
         if (gameObject.name != "Raja")
         {
