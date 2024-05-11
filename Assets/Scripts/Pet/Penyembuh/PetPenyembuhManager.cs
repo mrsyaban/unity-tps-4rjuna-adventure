@@ -6,11 +6,11 @@ using UnityEngine.AI;
 
 public class PetPenyembuhManager : MonoBehaviour
 {
-    [SerializeField] public Transform master;
+    [HideInInspector] public Transform master;
     public NavMeshAgent petNav;
     public Transform pet;
     public float healingDistance;
-    public GameObject playerObject;
+    GameObject playerObject;
     public int healPerTime;
     public float timeToHeal;
     [HideInInspector] public Animator animator;
@@ -26,6 +26,7 @@ public class PetPenyembuhManager : MonoBehaviour
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
+        master = playerObject.transform;
         playerHealth = playerObject.GetComponent<HealthManager>();
 
         animator = GetComponent<Animator>();

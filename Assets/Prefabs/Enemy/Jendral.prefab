@@ -2489,7 +2489,7 @@ GameObject:
   - component: {fileID: 2608434339974100972}
   m_Layer: 0
   m_Name: Jendral
-  m_TagString: Untagged
+  m_TagString: Jendral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
