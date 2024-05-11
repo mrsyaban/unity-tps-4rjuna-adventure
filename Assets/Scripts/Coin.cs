@@ -10,16 +10,19 @@ public class Coin : MonoBehaviour
     public Transform coin;
     public AudioClip clinkSound;
     Transform player;
+    private Quaternion initialRotation;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        initialRotation = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(coin.position, player.position) < 2.5)
+        transform.rotation = initialRotation;
+        if (Vector3.Distance(coin.position, player.position) < 3.5)
         {
             coinAgent.destination = player.position;
         }
@@ -31,4 +34,5 @@ public class Coin : MonoBehaviour
             //clinkSound.Play();
         }
     }
+
 }
