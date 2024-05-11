@@ -658,7 +658,7 @@ MonoBehaviour:
   enemyNav: {fileID: 0}
   enemy: {fileID: 0}
   animator: {fileID: 0}
-  distanceAttack: 2.5
+  distanceAttack: 1
 --- !u!114 &5021488256688281771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +675,7 @@ MonoBehaviour:
   health: 0
   hitParticle: {fileID: 0}
   healthBar: {fileID: 7546898642717492903}
+  coin: {fileID: 3129200342344496425, guid: 3e29573f06c0a7e4fa986fff41de17af, type: 3}
   isDead: 0
 --- !u!114 &3833265962959981881
 MonoBehaviour:

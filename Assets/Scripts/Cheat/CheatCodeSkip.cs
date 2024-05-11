@@ -13,6 +13,6 @@ public class CheatCodeSkip:CheatCodeBase
     
     public override void RunCheat()
     {
-        
+        NextScene.Next("Scenes/");
     }
 }
