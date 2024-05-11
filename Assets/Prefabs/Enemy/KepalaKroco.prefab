@@ -833,6 +833,7 @@ MonoBehaviour:
   health: 100
   hitParticle: {fileID: 0}
   healthBar: {fileID: 2313724839504834590}
+  isDead: 0
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mob: {fileID: 3136820629370392942, guid: defa3fcfff7f8bf4798b50d06fca1f3f, type: 3}
-  timer: 15
+  timer: 25
 --- !u!1 &4998309039223605368
 GameObject:
   m_ObjectHideFlags: 0
