@@ -51,12 +51,10 @@ public class EnemyHealth : MonoBehaviour
             {
                 Debug.Log("KrocoKill");
                 GameStateManager.Instance.UpdateKrocoKill(); 
-            }
-            if(gameObject.CompareTag("KepalaKroco")) 
+            } else if(gameObject.CompareTag("KepalaKroco")) 
             { 
                 GameStateManager.Instance.UpdateKepalaKrocoKill();
-            }
-            if(gameObject.CompareTag("Jendral")) 
+            } else if(gameObject.CompareTag("Jendral")) 
             { 
                 GameStateManager.Instance.UpdateJendralKill(); 
             }

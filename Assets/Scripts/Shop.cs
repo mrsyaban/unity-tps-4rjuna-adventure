@@ -70,7 +70,10 @@ public class Shop : MonoBehaviour
     {
         if (GameStateManager.Instance != null)
         {
-            textComponent3.text = GameStateManager.Instance.GetCoins().ToString();
+            if (GameStateManager.Instance.coin >= 99999)
+                textComponent3.SetText("\u221e");
+            else 
+                textComponent3.SetText(GameStateManager.Instance.coin.ToString());
         }
         CheckButtonAccessibility();
     }

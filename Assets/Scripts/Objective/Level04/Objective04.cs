@@ -6,7 +6,7 @@ public class Objective04 : Objective
     
     public override bool IsCompleted()
     {
-        int rajaKilled = GameStateManager.Instance.krocoKill;
+        int rajaKilled = GameStateManager.Instance.rajaKill;
 
         if (rajaKilled >=1)
         {

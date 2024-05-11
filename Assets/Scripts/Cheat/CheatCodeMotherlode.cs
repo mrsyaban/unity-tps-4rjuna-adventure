@@ -13,6 +13,6 @@ public class CheatCodeMotherlode:CheatCodeBase
     
     public override void RunCheat()
     {
-        GameStateManager.Instance.coin = int.MaxValue;
+        GameStateManager.Instance.AddCoin(999999);
     }
 }

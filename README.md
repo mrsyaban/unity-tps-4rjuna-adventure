@@ -68,10 +68,11 @@ Pasca kepunahan manusia akibat invasi monster, sebuah robot canggih bernama 4R-J
 
 ## Job Description
 
-| No. |                  Name                  | Job Desc | Hours Spent |
-| :-: | :------------------------------------: | :------: | :---------: |
-| 1.  |  Irsyad Nurwidianto Basuki (13521072)  |          |     000     |
-| 2.  |       Bagas Aryo Seto (13521081)       |          |     000     |
-| 3.  |    Rizky Abdillah Rasyid (13521109)    |          |     000     |
-| 4.  |   Muhammad Rizky Sya'ban (13521119)    |          |     000     |
-| 5.  | Muhammad Abdul Aziz Ghazali (13521128) |          |     000     |
+| No. |                  Name                  |                                Job Desc                                 | Hours Spent |
+|:---:|:--------------------------------------:|:-----------------------------------------------------------------------:|:---------:|
+| 1.  |  Irsyad Nurwidianto Basuki (13521072)  |                Jendral, Level 1, Save/Load, Orbs, Pause                 |     100   |
+| 2.  |       Bagas Aryo Seto (13521081)       |         Shop, All Cuscene, Efek sound, All Environment, Effect          |     100   |
+| 3.  |    Rizky Abdillah Rasyid (13521109)    |  Player, Kepala Kroco, Raja, Pet increase, Initial Setup, Health enemy  |     100   |
+| 4.  |   Muhammad Rizky Sya'ban (13521119)    | Player weapon, Pet Attacker, cheat, quest, spawner enemy, scene manager |     100   |
+| 5.  | Muhammad Abdul Aziz Ghazali (13521128) |    Game Menu, Statistik, Kroco, PetManager, Pet healer, koin prefabs    |     100   |
+| 6.  |      Tazkirah Amaliah (10023608)       |                           Initial Story line                            |     1     |

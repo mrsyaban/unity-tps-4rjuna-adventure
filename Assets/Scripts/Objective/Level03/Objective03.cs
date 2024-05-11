@@ -32,7 +32,7 @@ public class Objective03 : Objective
         {
             altar.SetActive(true);
             float playerDistance = Vector3.Distance(altar.transform.position, player.position);
-            if (playerDistance < 2.5f)
+            if (playerDistance < 5f)
             {
                 return true;
             }
