@@ -29,19 +29,30 @@ public class PetAttackerManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.position);
-        
-        float enemyDistance = Vector3.Distance(enemy.position, transform.position);
+        // Find all GameObjects with the specified tags
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Kroco");
+        GameObject[] kepalaKrocos = GameObject.FindGameObjectsWithTag("KepalaKroco");
+        GameObject[] jendrals = GameObject.FindGameObjectsWithTag("Jendral");
+        GameObject[] rajas = GameObject.FindGameObjectsWithTag("Raja");
 
-        if (enemyDistance <= 20f)
+        // Combine all arrays into one
+        GameObject[][] allEnemies = { enemies, kepalaKrocos, jendrals, rajas };
+        
+        // Find the nearest enemy among all enemy types
+        enemy= FindNearestEnemy(allEnemies);
+        
+        
+        float playerDistance = Vector3.Distance(player.position, transform.position);
+
+        if (playerDistance <= 10f)
         {
-            Rotate(enemy.eulerAngles);
+            agent.SetDestination(enemy.position);
             attackTimer += Time.deltaTime; // Increment the timer
 
             // Attack only if the timer exceeds the attack interval
@@ -50,6 +61,10 @@ public class PetAttackerManager : MonoBehaviour
                 Attack();
                 attackTimer = 0f; // Reset the timer after attacking
             }
+        }
+        else
+        {
+            agent.SetDestination(player.position);
         }
         
         if (agent.velocity.magnitude < 0.01f)
@@ -60,9 +75,9 @@ public class PetAttackerManager : MonoBehaviour
         else
         {
             animator.SetBool("isStop", false);
+            
         }
 
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
     
     private void Rotate(Vector3 targetEulerAngles)
@@ -96,5 +111,26 @@ public class PetAttackerManager : MonoBehaviour
     private void Die()
     {
         
+    }
+    
+    private Transform FindNearestEnemy(GameObject[][] allEnemies)
+    {
+        float minDistance = Mathf.Infinity;
+        Transform nearest = null;
+
+        foreach (GameObject[] enemyTypes in allEnemies)
+        {
+            foreach (GameObject enemyType in enemyTypes)
+            {
+                float distance = Vector3.Distance(transform.position, enemyType.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearest = enemyType.transform;
+                }
+            }
+        }
+
+        return nearest;
     }
 }

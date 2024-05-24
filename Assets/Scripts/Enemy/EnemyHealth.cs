@@ -42,7 +42,6 @@ public class EnemyHealth : MonoBehaviour
 
         animator.SetTrigger("Dead");
             
-        GetComponent<OrbManager>().DropRandomOrb();
         Debug.Log("ENEMYDEAD:" + gameObject.name);
         if (!gameObject.CompareTag("Raja"))
         {

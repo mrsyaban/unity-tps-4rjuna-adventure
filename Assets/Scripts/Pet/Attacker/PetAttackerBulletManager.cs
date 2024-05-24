@@ -4,12 +4,7 @@ public class PetAttackerBulletManager : MonoBehaviour
 {
     [SerializeField] float timeToDestroy;
     float timer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float damage = 2;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +17,12 @@ public class PetAttackerBulletManager : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("PlayerPet"))
         {
+            if (collision.gameObject.GetComponentInParent<EnemyHealth>())
+            {
+                EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
+                enemyHealth.TakeDamage(damage);
+                Debug.Log("[In Parent] Darah : " + enemyHealth.health);
+            } 
             Destroy(gameObject);
         }
     }

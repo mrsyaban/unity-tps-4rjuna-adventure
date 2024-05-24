@@ -22,7 +22,10 @@ public class PetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameStateManager.Instance.petsHealth[0] <= 0f)
+        {
+            
+        }
     }
 
     private void SpawnPet()
